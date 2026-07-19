@@ -14,3 +14,7 @@ texture = ExtResource("2_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=736750964]
 shape = SubResource("CircleShape2D_paw1w")
+
+[node name="PathFollow2D" type="NavigationAgent2D" parent="." unique_id=2130046357]
+debug_enabled = true
+debug_path_custom_color = Color(1, 0, 0, 1)

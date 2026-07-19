@@ -5,7 +5,6 @@
 
 [sub_resource type="Animation" id="Animation_wu84c"]
 resource_name = "Intro"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,6 +16,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(547.675, -82.98), Vector2(547.675, -0.07)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("start:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-318, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("quit:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(361, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
@@ -32,6 +55,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(547.675, -82.98)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("start:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("quit:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ln24"]
@@ -68,38 +115,42 @@ theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 68
 text = "Knowledge quest"
 
-[node name="start" type="Button" parent="." unique_id=1558163096]
-layout_mode = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=139056734]
+libraries/ = SubResource("AnimationLibrary_8ln24")
+autoplay = &"Intro"
+
+[node name="start" type="Node2D" parent="." unique_id=1885338848]
+metadata/_edit_group_ = true
+
+[node name="start" type="Button" parent="start" unique_id=1558163096]
 anchors_preset = -1
 anchor_left = 0.119
 anchor_top = 0.583
 anchor_right = 0.34500003
 anchor_bottom = 0.70400006
-offset_left = -0.08799744
-offset_top = 0.21600342
-offset_right = 0.55996704
-offset_bottom = 0.30795288
+offset_left = 137.0
+offset_top = 378.0
+offset_right = 295.0
+offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Start"
 
-[node name="quit" type="Button" parent="." unique_id=888486419]
-layout_mode = 1
+[node name="quit" type="Node2D" parent="." unique_id=1766821714]
+metadata/_edit_group_ = true
+
+[node name="quit" type="Button" parent="quit" unique_id=888486419]
 anchors_preset = -1
 anchor_left = 0.59000003
 anchor_top = 0.57600003
 anchor_right = 0.781
 anchor_bottom = 0.697
-offset_left = 0.3199463
-offset_top = -0.24801636
-offset_right = 0.28796387
-offset_bottom = -0.15600586
+offset_left = 808.0
+offset_top = 379.0
+offset_right = 975.0
+offset_bottom = 451.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Quit"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=139056734]
-libraries/ = SubResource("AnimationLibrary_8ln24")
-autoplay = &"Intro"
