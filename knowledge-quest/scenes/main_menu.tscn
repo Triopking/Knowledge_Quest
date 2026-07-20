@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://godcib0usmco"]
 
-[ext_resource type="Script" uid="uid://c7jhfaieut1i8" path="res://scenes/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://c7jhfaieut1i8" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://circus/Circus.ttf" id="2_bqqt6"]
 
 [sub_resource type="Animation" id="Animation_wu84c"]
@@ -154,3 +154,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Quit"
+
+[connection signal="pressed" from="start/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit/quit" to="." method="_on_quit_pressed"]
