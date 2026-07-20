@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://gasese18csuh"]
+
+[ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="1_pifv7"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_53hmh"]
+vertices = PackedVector2Array(966, 539, -966, 539, -966.21875, -534.8203, 966, -538.96875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-976.2341, -544.7945, -976, 549, 976, 549, 976, -549)])
+
+[node name="Labratory" type="Node2D" unique_id=528755933]
+
+[node name="Player" parent="." unique_id=876340452 instance=ExtResource("1_pifv7")]
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1550333502]
+zoom = Vector2(0.59, 0.59)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D" unique_id=721203575]
+
+[node name="Label" type="Label" parent="Player/Camera2D/CanvasLayer" unique_id=1150020549]
+offset_left = -88.0
+offset_top = -129.0
+offset_right = 105.0
+offset_bottom = -59.0
+theme_override_font_sizes/font_size = 51
+text = "Mingus!"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1570028070]
+rotation = 0.0022606356
+navigation_polygon = SubResource("NavigationPolygon_53hmh")
+metadata/_edit_lock_ = true

@@ -9,18 +9,26 @@ var direction: Vector2
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		pos_to_go_to = get_global_mouse_position()
-		path_follow_2d.target_position = pos_to_go_to
+		
+		
+	if pos_to_go_to:
+		
 		direction = to_local(path_follow_2d.get_next_path_position()).normalized()
-		
-	if pos_to_go_to && path_follow_2d.is_target_reached() == false:
-		
 		velocity = direction * SPEED * delta
 		
-		if global_position.distance_to(pos_to_go_to) < 5 && path_follow_2d.is_target_reached() == true:
+		if global_position.distance_to(pos_to_go_to) < 5:
 			global_position = pos_to_go_to
 			velocity = Vector2.ZERO
 			pos_to_go_to = null
+			
 	
 	
 
 	move_and_slide()
+
+func newpath() -> void:
+	if pos_to_go_to:
+		path_follow_2d.target_position = pos_to_go_to
+
+func _on_timer_timeout() -> void:
+	newpath()

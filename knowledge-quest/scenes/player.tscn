@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://pjuw8umclfbp" path="res://icon.svg" id="2_qhqgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_paw1w"]
-radius = 62.0
+radius = 50.08992
 
 [node name="Player" type="CharacterBody2D" unique_id=876340452]
 script = ExtResource("1_g2els")
@@ -16,5 +16,12 @@ texture = ExtResource("2_qhqgy")
 shape = SubResource("CircleShape2D_paw1w")
 
 [node name="PathFollow2D" type="NavigationAgent2D" parent="." unique_id=2130046357]
+avoidance_enabled = true
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=111167697]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
