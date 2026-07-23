@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://crm3rqoph3w3s"]
+
+[ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_62dxn"]
+
+[node name="math_level" type="Node2D" unique_id=1459633087]
+
+[node name="Leves(placeholder)" type="Sprite2D" parent="." unique_id=274728939]
+texture_repeat = 2
+position = Vector2(556, 326)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("1_62dxn")
+region_enabled = true
+region_rect = Rect2(-1768.9092, -838.95557, 4165.172, 3128.6807)

@@ -1,5 +1,6 @@
-[gd_scene format=3 uid="uid://gasese18csuh"]
+[gd_scene format=3 uid="uid://cdwv2rlkm26yd"]
 
+[ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_53hmh"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="1_pifv7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_53hmh"]
@@ -9,20 +10,24 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-976.2341, -544.7945, -
 
 [node name="Labratory" type="Node2D" unique_id=528755933]
 
+[node name="Leves(placeholder)" type="Sprite2D" parent="." unique_id=1882084280]
+texture_repeat = 2
+position = Vector2(0, -4)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("1_53hmh")
+region_enabled = true
+region_rect = Rect2(-2200.7852, -838.95557, 4952.1445, 3128.6807)
+
 [node name="Player" parent="." unique_id=876340452 instance=ExtResource("1_pifv7")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1550333502]
-zoom = Vector2(0.59, 0.59)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D" unique_id=721203575]
-
-[node name="Label" type="Label" parent="Player/Camera2D/CanvasLayer" unique_id=1150020549]
-offset_left = -88.0
-offset_top = -129.0
-offset_right = 105.0
-offset_bottom = -59.0
-theme_override_font_sizes/font_size = 51
-text = "Mingus!"
+zoom = Vector2(0.595, 0.595)
+limit_left = -1008
+limit_top = -645
+limit_right = 1008
+limit_bottom = 645
+position_smoothing_enabled = true
+position_smoothing_speed = 0.575
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1570028070]
 rotation = 0.0022606356

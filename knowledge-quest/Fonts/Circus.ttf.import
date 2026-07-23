@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cabc45ikapctp"
-path="res://.godot/imported/Circus.ttf-3589d30c829c026e3e3a9c3a2795e1d1.fontdata"
+path="res://.godot/imported/Circus.ttf-2a7f2d52ed149a258640e5155a657976.fontdata"
 
 [deps]
 
-source_file="res://circus/Circus.ttf"
-dest_files=["res://.godot/imported/Circus.ttf-3589d30c829c026e3e3a9c3a2795e1d1.fontdata"]
+source_file="res://Fonts/Circus.ttf"
+dest_files=["res://.godot/imported/Circus.ttf-2a7f2d52ed149a258640e5155a657976.fontdata"]
 
 [params]
 

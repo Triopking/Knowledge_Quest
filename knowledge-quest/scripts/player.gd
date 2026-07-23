@@ -9,6 +9,7 @@ var direction: Vector2
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		pos_to_go_to = get_global_mouse_position()
+		print(pos_to_go_to)
 		
 		
 	if pos_to_go_to:
