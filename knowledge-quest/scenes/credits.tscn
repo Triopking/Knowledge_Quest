@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bfxyhdlfy0g5w"]
 
+[ext_resource type="Script" uid="uid://n6c6qr54djng" path="res://scripts/credits.gd" id="1_0bpdh"]
+
 [node name="Credits" type="Control" unique_id=509600254]
 layout_mode = 3
 anchors_preset = 15
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0bpdh")
 
 [node name="Label" type="Label" parent="." unique_id=1129202532]
 layout_mode = 1
@@ -17,12 +20,34 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -560.0
 offset_top = -309.0
-offset_right = 553.0
+offset_right = -41.0
 offset_bottom = 305.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Credits:
-Creator of the game: Auguste
+Creator of the game: Auguste who thinks the Leaning Tower of Pisa
+should be replicated everywhere.
+
+Tutorials & help:
+Bradely Cave - best teacher in Game Developement
+Player movement: DevWorm & Single Minded
 
 Fonts: 
 Circus by Dan Roseman"
+
+[node name="Label2" type="Label" parent="." unique_id=145989046]
+layout_mode = 0
+offset_left = 549.0
+offset_right = 1151.0
+offset_bottom = 647.0
+
+[node name="GoBack" type="Button" parent="." unique_id=2008040917]
+layout_mode = 0
+offset_left = 902.0
+offset_top = 586.0
+offset_right = 1143.0
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 25
+text = "Back to Main Menu"
+
+[connection signal="pressed" from="GoBack" to="." method="_on_go_back_pressed"]

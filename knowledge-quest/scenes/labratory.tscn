@@ -1,18 +1,23 @@
 [gd_scene format=3 uid="uid://cdwv2rlkm26yd"]
 
 [ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_53hmh"]
+[ext_resource type="Script" uid="uid://clnpqe0dbdebj" path="res://scripts/labratory.gd" id="1_ab820"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="1_pifv7"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_53hmh"]
-vertices = PackedVector2Array(966, 539, -966, 539, -966.21875, -534.8203, 966, -538.96875)
+vertices = PackedVector2Array(990.5, -581.27344, 972.5, 587.8125, -971.8203, 594.1797, -995.1328, -582.71875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-976.2341, -544.7945, -976, 549, 976, 549, 976, -549)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1005.3425, -592.7288, -981.6366, 604.2207, 982.3539, 597.7808, 1000.6659, -591.2636)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02c0y"]
+size = Vector2(152, 342)
 
 [node name="Labratory" type="Node2D" unique_id=528755933]
+script = ExtResource("1_ab820")
 
 [node name="Leves(placeholder)" type="Sprite2D" parent="." unique_id=1882084280]
 texture_repeat = 2
-position = Vector2(0, -4)
+position = Vector2(1, -4)
 scale = Vector2(0.41, 0.41)
 texture = ExtResource("1_53hmh")
 region_enabled = true
@@ -22,10 +27,10 @@ region_rect = Rect2(-2200.7852, -838.95557, 4952.1445, 3128.6807)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1550333502]
 zoom = Vector2(0.595, 0.595)
-limit_left = -1008
-limit_top = -645
-limit_right = 1008
-limit_bottom = 645
+limit_left = -992
+limit_top = -587
+limit_right = 1004
+limit_bottom = 602
 position_smoothing_enabled = true
 position_smoothing_speed = 0.575
 
@@ -33,3 +38,14 @@ position_smoothing_speed = 0.575
 rotation = 0.0022606356
 navigation_polygon = SubResource("NavigationPolygon_53hmh")
 metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1002905477]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=217162181]
+polygon = PackedVector2Array(-999, -587, 993, -580, 972, 590, -974, 592, -999, -583, -1002, -583, -982, 601, 983, 602, 999, -586, -1002, -590, -1002, -583, -999, -583)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=219229251]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1072507089]
+position = Vector2(881, -3)
+shape = SubResource("RectangleShape2D_02c0y")

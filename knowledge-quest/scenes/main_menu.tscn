@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://godcib0usmco"]
 
-[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://c7jhfaieut1i8" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="2_bqqt6"]
 
 [sub_resource type="Animation" id="Animation_wu84c"]
@@ -41,6 +41,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(361, 0), Vector2(0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 335.335), Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ekxnf"]
 length = 0.001
@@ -75,6 +87,18 @@ tracks/2/path = NodePath("quit:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -155,5 +179,24 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Quit"
 
+[node name="Node2D" type="Node2D" parent="." unique_id=1097479146]
+
+[node name="credits" type="Button" parent="Node2D" unique_id=1968032417]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 469.0
+offset_top = 373.0
+offset_right = 660.0
+offset_bottom = 454.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+text = "Credits"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="start/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Node2D/credits" to="." method="_on_credits_pressed"]

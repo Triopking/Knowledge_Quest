@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://crm3rqoph3w3s"]
+
+[ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_62dxn"]
+[ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="2_e45yn"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nk7nx"]
+vertices = PackedVector2Array(1390.9531, -306.02344, 1385.0391, 949.9375, -283.8828, 941.0469, -270.10156, -310.96875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-280, -321, -294, 951, 1395, 960, 1401, -316)])
+
+[node name="MathLevel" type="Node2D" unique_id=1459633087]
+
+[node name="Leves(placeholder)" type="Sprite2D" parent="." unique_id=274728939]
+texture_repeat = 2
+position = Vector2(556, 326)
+scale = Vector2(0.41, 0.41)
+texture = ExtResource("1_62dxn")
+region_enabled = true
+region_rect = Rect2(-1768.9092, -838.95557, 4165.172, 3128.6807)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=2068492494]
+navigation_polygon = SubResource("NavigationPolygon_nk7nx")
+
+[node name="Player" parent="." unique_id=876340452 instance=ExtResource("2_e45yn")]
+position = Vector2(468, 354)
