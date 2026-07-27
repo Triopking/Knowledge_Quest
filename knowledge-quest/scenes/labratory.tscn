@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_53hmh"]
 [ext_resource type="Script" uid="uid://clnpqe0dbdebj" path="res://scripts/labratory.gd" id="1_ab820"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="1_pifv7"]
+[ext_resource type="Texture2D" uid="uid://bwsfkwkfcqpe4" path="res://assets/checkerboard(placeh).png" id="4_02c0y"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_53hmh"]
 vertices = PackedVector2Array(990.5, -581.27344, 972.5, 587.8125, -971.8203, 594.1797, -995.1328, -582.71875)
@@ -24,6 +25,7 @@ region_enabled = true
 region_rect = Rect2(-2200.7852, -838.95557, 4952.1445, 3128.6807)
 
 [node name="Player" parent="." unique_id=876340452 instance=ExtResource("1_pifv7")]
+z_index = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1550333502]
 zoom = Vector2(0.595, 0.595)
@@ -49,3 +51,22 @@ polygon = PackedVector2Array(-999, -587, 993, -580, 972, 590, -974, 592, -999, -
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1072507089]
 position = Vector2(881, -3)
 shape = SubResource("RectangleShape2D_02c0y")
+
+[node name="Checkerboard(placeh)" type="Sprite2D" parent="Area2D" unique_id=1102460790]
+texture_repeat = 2
+position = Vector2(881, -3)
+texture = ExtResource("4_02c0y")
+region_enabled = true
+region_rect = Rect2(0, 0, 144, 344)
+
+[node name="Label" type="Label" parent="Area2D" unique_id=1985688670]
+z_index = 6
+offset_left = 808.0
+offset_top = -54.0
+offset_right = 957.0
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 38
+text = "Press 'e'"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

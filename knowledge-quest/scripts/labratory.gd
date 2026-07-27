@@ -1,11 +1,28 @@
 extends Node2D
 
+@onready var player: CharacterBody2D = $Player
+@onready var label: Label = $Area2D/Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	label.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == player:#when the player is on the door, it should go to the math level.
+		label.visible = true
+	elif body == player and Input.is_action_pressed("interact"):
+		get_tree().change_scene_to_file("res://scenes/math_level.tscn")
+	
+	
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body == player:
+		label.visible = false
+	

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cn03dvcw3773q"]
+
+[node name="MathProblem" type="Node2D" unique_id=1572927992]
+
+[node name="Label" type="Label" parent="." unique_id=1706680340]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 234.0
+offset_top = 3.0
+offset_right = 928.0
+offset_bottom = 36.0
+grow_horizontal = 2

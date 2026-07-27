@@ -197,6 +197,9 @@ theme_override_font_sizes/font_size = 46
 text = "Credits"
 metadata/_edit_use_anchors_ = true
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1879273209]
+position = Vector2(575, 326)
+
 [connection signal="pressed" from="start/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Node2D/credits" to="." method="_on_credits_pressed"]
