@@ -3,12 +3,26 @@
 [ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_62dxn"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="2_e45yn"]
 
+[sub_resource type="Gradient" id="Gradient_osymv"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j65sn"]
+gradient = SubResource("Gradient_osymv")
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_nk7nx"]
 vertices = PackedVector2Array(1390.9531, -306.02344, 1385.0391, 949.9375, -283.8828, 941.0469, -270.10156, -310.96875)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-280, -321, -294, 951, 1395, 960, 1401, -316)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_osymv"]
+size = Vector2(1622, 912)
+
 [node name="MathLevel" type="Node2D" unique_id=1459633087]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918853350]
+position = Vector2(727, 483.99997)
+scale = Vector2(74.296875, 65.03125)
+texture = SubResource("GradientTexture2D_j65sn")
 
 [node name="Leves(placeholder)" type="Sprite2D" parent="." unique_id=274728939]
 texture_repeat = 2
@@ -23,3 +37,21 @@ navigation_polygon = SubResource("NavigationPolygon_nk7nx")
 
 [node name="Player" parent="." unique_id=876340452 instance=ExtResource("2_e45yn")]
 position = Vector2(468, 354)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1998901335]
+zoom = Vector2(0.71, 0.71)
+limit_left = -546
+limit_right = 1611
+limit_bottom = 1158
+position_smoothing_enabled = true
+position_smoothing_speed = 0.765
+
+[node name="Area2D" type="Area2D" parent="Player/Camera2D" unique_id=1978414473]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Camera2D/Area2D" unique_id=1564268021]
+shape = SubResource("RectangleShape2D_osymv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=262669951]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=854249058]
+polygon = PackedVector2Array(-296, 950, 1389, 956, 1390, -307, 583, -319, 584, -354, 1409, -327, 1416, 970, -313, 964, -291, -348, 275, -353, 277, -318, -276, -319)

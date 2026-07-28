@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cn03dvcw3773q"]
 
+[ext_resource type="Script" uid="uid://bh0k1eocdf0wd" path="res://scripts/math_problems.gd" id="1_e6jbw"]
+
 [node name="MathProblem" type="Node2D" unique_id=1572927992]
+script = ExtResource("1_e6jbw")
 
 [node name="Label" type="Label" parent="." unique_id=1706680340]
 anchors_preset = 5
