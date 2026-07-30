@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://crm3rqoph3w3s"]
 
 [ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_62dxn"]
+[ext_resource type="Script" uid="uid://bitj3giatvk7m" path="res://scenes/math_level.gd" id="1_j65sn"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="2_e45yn"]
 
 [sub_resource type="Gradient" id="Gradient_osymv"]
@@ -18,10 +19,11 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-280, -321, -294, 951, 
 size = Vector2(1622, 912)
 
 [node name="MathLevel" type="Node2D" unique_id=1459633087]
+script = ExtResource("1_j65sn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918853350]
-position = Vector2(727, 483.99997)
-scale = Vector2(74.296875, 65.03125)
+position = Vector2(1233.4995, -7977.001)
+scale = Vector2(519.7656, 329.43753)
 texture = SubResource("GradientTexture2D_j65sn")
 
 [node name="Leves(placeholder)" type="Sprite2D" parent="." unique_id=274728939]

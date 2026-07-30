@@ -1,16 +1,43 @@
 [gd_scene format=3 uid="uid://cn03dvcw3773q"]
 
 [ext_resource type="Script" uid="uid://bh0k1eocdf0wd" path="res://scripts/math_problems.gd" id="1_e6jbw"]
+[ext_resource type="Texture2D" uid="uid://bl6vojmdr0yea" path="res://assets/Triangle.png" id="2_oevby"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevby"]
 
 [node name="MathProblem" type="Node2D" unique_id=1572927992]
 script = ExtResource("1_e6jbw")
+
+[node name="Sprite2D" type="ColorRect" parent="." unique_id=2049606390]
+offset_left = 2.0
+offset_right = 1150.0
+offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="." unique_id=1706680340]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 234.0
+offset_left = 73.0
 offset_top = 3.0
-offset_right = 928.0
-offset_bottom = 36.0
+offset_right = 1041.0
+offset_bottom = 70.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Question:"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=581351100]
+offset_left = 4.0
+offset_top = 533.0
+offset_right = 1115.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 47
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oevby")
+text = "Anwer:"
+caret_blink = true
+text_direction = 1
+
+[node name="Triangle" type="Sprite2D" parent="." unique_id=430966352]
+position = Vector2(533, 300)
+scale = Vector2(1.7611113, 1.7611111)
+texture = ExtResource("2_oevby")
