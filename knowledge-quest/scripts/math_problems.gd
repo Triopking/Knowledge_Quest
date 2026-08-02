@@ -11,4 +11,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	label.text = ("Question: " Global.questionName)
+	label.text = ("Question: " + Global.questionName)
