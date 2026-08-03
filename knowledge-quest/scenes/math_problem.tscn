@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bh0k1eocdf0wd" path="res://scripts/math_problems.gd" id="1_e6jbw"]
 [ext_resource type="Texture2D" uid="uid://bl6vojmdr0yea" path="res://assets/Triangle.png" id="2_oevby"]
+[ext_resource type="Texture2D" uid="uid://dwb5kj8noas3h" path="res://assets/Rectangle.png" id="3_5oikj"]
+[ext_resource type="Texture2D" uid="uid://c5x7tfc5cl8it" path="res://assets/RightTriangle.png" id="4_skmra"]
+[ext_resource type="Texture2D" uid="uid://icsglshkoicp" path="res://assets/Square.png" id="5_26eq7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevby"]
 
@@ -13,7 +16,7 @@ offset_left = 2.0
 offset_right = 1150.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="." unique_id=1706680340]
+[node name="Question" type="Label" parent="." unique_id=1706680340]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -33,11 +36,112 @@ offset_right = 1115.0
 offset_bottom = 620.0
 theme_override_font_sizes/font_size = 47
 theme_override_styles/focus = SubResource("StyleBoxEmpty_oevby")
-text = "Anwer:"
+placeholder_text = "Answer:"
 caret_blink = true
+caret_blink_interval = 1.32
 text_direction = 1
 
-[node name="Triangle" type="Sprite2D" parent="." unique_id=430966352]
+[node name="Shepes" type="Node2D" parent="." unique_id=678132371]
+
+[node name="Triangle" type="Sprite2D" parent="Shepes" unique_id=430966352]
 position = Vector2(533, 300)
 scale = Vector2(1.7611113, 1.7611111)
 texture = ExtResource("2_oevby")
+
+[node name="A" type="Label" parent="Shepes/Triangle" unique_id=284218202]
+offset_left = -66.435326
+offset_top = -80.06309
+offset_right = -26.435326
+offset_bottom = -57.063087
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "?"
+
+[node name="h" type="Label" parent="Shepes/Triangle" unique_id=1125110064]
+offset_left = 21.009449
+offset_top = 23.280754
+offset_right = 41.4511
+offset_bottom = 48.8328
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="b" type="Label" parent="Shepes/Triangle" unique_id=1905862676]
+offset_left = -7.949526
+offset_top = 59.053623
+offset_right = 32.050476
+offset_bottom = 82.05362
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Rectangle" type="Sprite2D" parent="Shepes" unique_id=325774048]
+position = Vector2(533, 299.5)
+scale = Vector2(1.4849786, 1.5023698)
+texture = ExtResource("3_5oikj")
+
+[node name="A" type="Label" parent="Shepes/Rectangle" unique_id=1403864410]
+offset_left = -72.728325
+offset_top = -98.17823
+offset_right = -32.728325
+offset_bottom = -75.17823
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "?"
+
+[node name="l" type="Label" parent="Shepes/Rectangle" unique_id=258379597]
+offset_left = -32.99711
+offset_top = 32.282333
+offset_right = 7.0028915
+offset_bottom = 55.282333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="h" type="Label" parent="Shepes/Rectangle" unique_id=737785252]
+offset_left = 68.68787
+offset_top = -2.9952602
+offset_right = 108.68787
+offset_bottom = 20.00474
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="RightTriangle" type="Sprite2D" parent="Shepes" unique_id=1081061725]
+position = Vector2(533.25, 300.75)
+scale = Vector2(1.4828327, 1.5094787)
+texture = ExtResource("4_skmra")
+
+[node name="c" type="Label" parent="Shepes/RightTriangle" unique_id=894725789]
+offset_left = 41.64327
+offset_top = -52.170326
+offset_right = 81.643265
+offset_bottom = -29.170326
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "?"
+
+[node name="a" type="Label" parent="Shepes/RightTriangle" unique_id=1747349874]
+offset_left = -110.767715
+offset_top = -12.421507
+offset_right = -70.767715
+offset_bottom = 10.578493
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="b" type="Label" parent="Shepes/RightTriangle" unique_id=1292452045]
+offset_left = 9.272797
+offset_top = 43.226845
+offset_right = 49.272797
+offset_bottom = 66.226845
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Square" type="Sprite2D" parent="Shepes" unique_id=559945917]
+position = Vector2(533.25, 300.75)
+scale = Vector2(1.4828327, 1.514218)
+texture = ExtResource("5_26eq7")
+
+[node name="A" type="Label" parent="Shepes/Square" unique_id=788831564]
+offset_left = 8.598408
+offset_top = 54.318466
+offset_right = 48.598408
+offset_bottom = 77.31847
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "?"
+
+[node name="s" type="Label" parent="Shepes/Square" unique_id=21462269]
+offset_left = 67.94428
+offset_top = 0.16510172
+offset_right = 107.94428
+offset_bottom = 23.165102
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

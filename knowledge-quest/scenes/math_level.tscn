@@ -53,6 +53,12 @@ position_smoothing_speed = 0.765
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Camera2D/Area2D" unique_id=1564268021]
 shape = SubResource("RectangleShape2D_osymv")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1477038734]
+
+[node name="ProgressBar" type="ProgressBar" parent="Player/CanvasLayer" unique_id=1202492395]
+offset_right = 1153.0
+offset_bottom = 43.0
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=262669951]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=854249058]
