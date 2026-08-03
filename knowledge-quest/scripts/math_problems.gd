@@ -88,7 +88,7 @@ func _ready() -> void:
 		a.text = str(side2)
 		
 	if shape == "square":
-		side1 = randi()%10+1
+		side1 = randi()%10+2
 		s_square.text = str(side1)
 		
 

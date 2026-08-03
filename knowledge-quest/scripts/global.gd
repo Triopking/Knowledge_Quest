@@ -2,4 +2,5 @@ extends Node
 
 var questionName
 var playerX
-var health = 4
+var health
+var salrog_progress

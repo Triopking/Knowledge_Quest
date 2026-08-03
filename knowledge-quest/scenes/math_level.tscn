@@ -58,6 +58,16 @@ shape = SubResource("RectangleShape2D_osymv")
 [node name="ProgressBar" type="ProgressBar" parent="Player/CanvasLayer" unique_id=1202492395]
 offset_right = 1153.0
 offset_bottom = 43.0
+show_percentage = false
+
+[node name="Salrog meter" type="Label" parent="Player/CanvasLayer/ProgressBar" unique_id=1857780083]
+layout_mode = 0
+offset_left = 473.0
+offset_top = -8.0
+offset_right = 708.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 38
+text = "Salrog meter"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=262669951]
 
