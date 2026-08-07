@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://crm3rqoph3w3s"]
 
 [ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_62dxn"]
-[ext_resource type="Script" uid="uid://bitj3giatvk7m" path="res://scenes/math_level.gd" id="1_j65sn"]
+[ext_resource type="Script" uid="uid://bitj3giatvk7m" path="res://scripts/math_level.gd" id="1_j65sn"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="2_e45yn"]
 
 [sub_resource type="Gradient" id="Gradient_osymv"]
@@ -58,6 +58,7 @@ shape = SubResource("RectangleShape2D_osymv")
 [node name="ProgressBar" type="ProgressBar" parent="Player/CanvasLayer" unique_id=1202492395]
 offset_right = 1153.0
 offset_bottom = 43.0
+max_value = 10.0
 show_percentage = false
 
 [node name="Salrog meter" type="Label" parent="Player/CanvasLayer/ProgressBar" unique_id=1857780083]
