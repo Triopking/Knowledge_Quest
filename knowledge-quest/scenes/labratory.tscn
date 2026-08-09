@@ -1,9 +1,18 @@
-[gd_scene format=3 uid="uid://cdwv2rlkm26yd"]
+[gd_scene format=4 uid="uid://cdwv2rlkm26yd"]
 
-[ext_resource type="Texture2D" uid="uid://45uqvxxv0wdy" path="res://assets/leves (placeholder).jpg" id="1_53hmh"]
 [ext_resource type="Script" uid="uid://clnpqe0dbdebj" path="res://scripts/labratory.gd" id="1_ab820"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="1_pifv7"]
+[ext_resource type="Texture2D" uid="uid://bkn305ykxdbjo" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Tile/Tile_13-256x256.png" id="2_02c0y"]
 [ext_resource type="Texture2D" uid="uid://bwsfkwkfcqpe4" path="res://assets/checkerboard(placeh).png" id="4_02c0y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_li6un"]
+texture = ExtResource("2_02c0y")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_73ss4"]
+tile_size = Vector2i(256, 256)
+sources/2 = SubResource("TileSetAtlasSource_li6un")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_53hmh"]
 vertices = PackedVector2Array(990.5, -581.27344, 972.5, 587.8125, -971.8203, 594.1797, -995.1328, -582.71875)
@@ -13,26 +22,38 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-1005.3425, -592.7288, 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02c0y"]
 size = Vector2(152, 342)
 
+[sub_resource type="Gradient" id="Gradient_02c0y"]
+colors = PackedColorArray(1, 1, 1, 0, 0.03448276, 0.03448276, 0.03448276, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_li6un"]
+gradient = SubResource("Gradient_02c0y")
+fill = 2
+fill_from = Vector2(0.491453, 0.5)
+fill_to = Vector2(0.8888889, 0.1965812)
+
 [node name="Labratory" type="Node2D" unique_id=528755933]
 script = ExtResource("1_ab820")
 
-[node name="Leves(placeholder)" type="Sprite2D" parent="." unique_id=1882084280]
-texture_repeat = 2
-position = Vector2(1, -4)
-scale = Vector2(0.41, 0.41)
-texture = ExtResource("1_53hmh")
-region_enabled = true
-region_rect = Rect2(-2200.7852, -838.95557, 4952.1445, 3128.6807)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=750276073]
+offset_left = -1632.0
+offset_top = -930.0
+offset_right = 1733.0
+offset_bottom = 1318.0
+color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1700534790]
+tile_map_data = PackedByteArray("AAD8//7/AgAAAAAAAAD+//7/AgAAAAAAAAD9//7/AgAAAAAAAAD///7/AgAAAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAACAP7/AgAAAAAAAAADAP7/AgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wIAAgAAAAAAAAD9/wIAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAD//wIAAgAAAAAAAAD9/wAAAgAAAAAAAAD9////AgAAAAAAAAD8////AgAAAAAAAAD8/wAAAgAAAAAAAAD8/wIAAgAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAD/////AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAACAP//AgAAAAAAAAABAP//AgAAAAAAAAD8//3/AgAAAAAAAAD9//3/AgAAAAAAAAD+//3/AgAAAAAAAAD///3/AgAAAAAAAAAAAP3/AgAAAAAAAAABAP3/AgAAAAAAAAACAP3/AgAAAAAAAAADAP3/AgAAAAAAAAAEAP3/AgAAAAAAAAAEAP7/AgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAD7/wIAAgAAAAAAAAD7/wEAAgAAAAAAAAD7/wAAAgAAAAAAAAD7////AgAAAAAAAAD7//7/AgAAAAAAAAD7//3/AgAAAAAAAAA=")
+tile_set = SubResource("TileSet_73ss4")
 
 [node name="Player" parent="." unique_id=876340452 instance=ExtResource("1_pifv7")]
 z_index = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1550333502]
 zoom = Vector2(0.595, 0.595)
-limit_left = -992
-limit_top = -587
-limit_right = 1004
-limit_bottom = 602
+limit_left = -1068
+limit_top = -626
+limit_right = 1074
+limit_bottom = 656
 position_smoothing_enabled = true
 position_smoothing_speed = 0.575
 
@@ -67,6 +88,11 @@ offset_right = 957.0
 offset_bottom = -1.0
 theme_override_font_sizes/font_size = 38
 text = "Press 'e'"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=374713161]
+position = Vector2(28.000051, 33.99997)
+scale = Vector2(37.84375, 21.875)
+texture = SubResource("GradientTexture2D_li6un")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

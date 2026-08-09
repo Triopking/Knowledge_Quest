@@ -37,7 +37,10 @@ iaknihs - tutorial for making the problems answerable.
 MakerTech - tutorial on how to make a health system
 
 Fonts: 
-Circus by Dan Roseman"
+Circus by Dan Roseman
+
+Assets:
+Screamin Brain studios for textures"
 
 [node name="Label2" type="Label" parent="." unique_id=145989046]
 layout_mode = 0
