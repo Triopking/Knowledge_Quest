@@ -3,9 +3,10 @@
 [ext_resource type="Script" uid="uid://bh0k1eocdf0wd" path="res://scripts/math_problems.gd" id="1_5ul6q"]
 [ext_resource type="Texture2D" uid="uid://bl6vojmdr0yea" path="res://assets/Triangle.png" id="2_lonik"]
 [ext_resource type="Texture2D" uid="uid://dwb5kj8noas3h" path="res://assets/Rectangle.png" id="3_gykmk"]
-[ext_resource type="Texture2D" uid="uid://c5x7tfc5cl8it" path="res://assets/RightTriangle.png" id="4_84vdc"]
+[ext_resource type="Texture2D" uid="uid://ddfmw7wo02ayn" path="res://assets/Cube.png" id="4_lonik"]
 [ext_resource type="Texture2D" uid="uid://icsglshkoicp" path="res://assets/Square.png" id="5_cr1mp"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="6_gnfao"]
+[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/questions.png" id="6_lonik"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevby"]
 
@@ -45,6 +46,7 @@ text_direction = 1
 [node name="Shapes" type="Node2D" parent="." unique_id=678132371]
 
 [node name="Triangle" type="Sprite2D" parent="Shapes" unique_id=430966352]
+visible = false
 position = Vector2(533, 300)
 scale = Vector2(1.7611113, 1.7611111)
 texture = ExtResource("2_lonik")
@@ -98,34 +100,23 @@ offset_right = 108.68787
 offset_bottom = 20.00474
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
-[node name="RightTriangle" type="Sprite2D" parent="Shapes" unique_id=1081061725]
-position = Vector2(533.25, 300.75)
-scale = Vector2(1.4828327, 1.5094787)
-texture = ExtResource("4_84vdc")
+[node name="Cube" type="Sprite2D" parent="Shapes" unique_id=1081061725]
+position = Vector2(506, 302)
+scale = Vector2(2.6666663, 2.3843584)
+texture = ExtResource("4_lonik")
+region_enabled = true
+region_rect = Rect2(51, 32, 123, 128)
 
-[node name="c" type="Label" parent="Shapes/RightTriangle" unique_id=894725789]
-offset_left = 41.64327
-offset_top = -52.170326
-offset_right = 81.643265
-offset_bottom = -29.170326
+[node name="l" type="Label" parent="Shapes/Cube" unique_id=894725789]
+offset_left = 5.2500005
+offset_top = -67.104004
+offset_right = 45.249992
+offset_bottom = -44.104004
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "?"
 
-[node name="a" type="Label" parent="Shapes/RightTriangle" unique_id=1747349874]
-offset_left = -110.767715
-offset_top = -12.421507
-offset_right = -70.767715
-offset_bottom = 10.578493
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
-[node name="b" type="Label" parent="Shapes/RightTriangle" unique_id=1292452045]
-offset_left = 9.272797
-offset_top = 43.226845
-offset_right = 49.272797
-offset_bottom = 66.226845
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-
 [node name="Square" type="Sprite2D" parent="Shapes" unique_id=559945917]
+visible = false
 position = Vector2(533.25, 300.75)
 scale = Vector2(1.4828327, 1.514218)
 texture = ExtResource("5_cr1mp")
@@ -144,6 +135,12 @@ offset_top = 0.16510172
 offset_right = 107.94428
 offset_bottom = 23.165102
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Questions" type="Sprite2D" parent="." unique_id=377661026]
+texture_filter = 1
+position = Vector2(171, 100)
+texture = ExtResource("6_lonik")
+vframes = 4
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1747068676]
 
@@ -171,7 +168,7 @@ theme_override_font_sizes/font_size = 127
 text = "Correct"
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Correct" unique_id=1030771271]
-wait_time = 4.0
+wait_time = 3.0
 one_shot = true
 
 [node name="Incorrect" type="ColorRect" parent="CanvasLayer" unique_id=166635821]
@@ -198,7 +195,7 @@ theme_override_font_sizes/font_size = 127
 text = "Incorrect"
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Incorrect" unique_id=2042739920]
-wait_time = 4.0
+wait_time = 3.0
 one_shot = true
 
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]

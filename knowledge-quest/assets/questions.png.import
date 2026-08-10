@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwsfkwkfcqpe4"
-path="res://.godot/imported/checkerboard(placeh).png-ba6deb07ddadf9179d27db37f1e25b8b.ctex"
+uid="uid://cssbeur73dqid"
+path="res://.godot/imported/questions.png-1b6ef4e8074c363f63ff88d8e9828254.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/checkerboard(placeh).png"
-dest_files=["res://.godot/imported/checkerboard(placeh).png-ba6deb07ddadf9179d27db37f1e25b8b.ctex"]
+source_file="res://assets/questions.png"
+dest_files=["res://.godot/imported/questions.png-1b6ef4e8074c363f63ff88d8e9828254.ctex"]
 
 [params]
 

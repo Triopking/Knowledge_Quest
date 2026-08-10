@@ -16,11 +16,11 @@ extends Node2D
 @onready var l_rectangle: Label = $Shapes/Rectangle/l
 @onready var h_rectangle: Label = $Shapes/Rectangle/h
 
-#right angle triangle:
-@onready var right_triangle: Sprite2D = $Shapes/RightTriangle
-@onready var c: Label = $Shapes/RightTriangle/c
-@onready var a: Label = $Shapes/RightTriangle/a
-@onready var b: Label = $Shapes/RightTriangle/b
+#circle:
+@onready var cube: Sprite2D = $Shapes/Cube
+@onready var l: Label = $Shapes/Cube/l
+
+
 
 #square:
 @onready var square: Sprite2D = $Shapes/Square
@@ -36,6 +36,8 @@ extends Node2D
 @onready var a_timer: Timer = $CanvasLayer/Correct/Timer
 @onready var b_timer: Timer = $CanvasLayer/Incorrect/Timer
 
+#question number display
+@onready var questions: Sprite2D = $Questions
 
 #shapes
 var shape
@@ -53,18 +55,21 @@ var answered = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	if qnum > 3:
+		end()
+	
 	line_edit.grab_focus()
 	line_edit.caret_column = (len(line_edit.text))
 	triangle.visible = false
 	rectangle.visible = false
-	right_triangle.visible = false
+	cube.visible = false
 	square.visible = false
 	correct.visible = false
 	incorrect.visible = false
 	
+	questions.frame = qnum
+	
 	var rand = randi()%4
-	
-	
 	
 	#randomly selects a shape at random
 	if rand == 0:
@@ -74,34 +79,34 @@ func _ready() -> void:
 		rectangle.visible = true
 		shape = "rectangle"
 	elif rand == 2:
-		right_triangle.visible = true
-		shape = "right angled \ntriangle"
+		cube.visible = true
+		shape = "cube"
 	elif rand == 3:
 		square.visible = true
 		shape = "square"
 	
-	if shape == "right angled \ntriangle":
-		question.text = "Question: What is c equal to?"
+	if shape == "cube":
+		question.text = "Question: What is the volume of the " + shape + "?"
 	else:
 		question.text = "Question: What is the area of the " + shape + "?"
 	
+	
 	if shape == "triangle":
-		side1 = randi()%15+2
+		side1 = randi()%10+1
 		b_triangle.text = str(side1)
 		side2 = randi()%15+2
 		h_triangle.text = str(side2)
 		
 	if shape == "rectangle":
-		side1 = randi()%15+2
+		side1 = randi()%10+1
 		l_rectangle.text = str(side1)
-		side2 = randi()%15+2
+		side2 = randi()%10+1
 		h_rectangle.text = str(side2)
 		
-	if shape == "right angled \ntriangle":
-		side1 = randi()%15+2
-		b.text = str(side1)
-		side2 = randi()%15+2
-		a.text = str(side2)
+	if shape == "cube":
+		side1 = randi()%10+1
+		l.text = str(side1)
+		
 		
 	if shape == "square":
 		side1 = randi()%10+2
@@ -118,51 +123,50 @@ func _process(_delta: float) -> void:
 func _on_line_edit_text_submitted(new_text: String) -> void:
 	
 	var answer = int(new_text)
-	
+	#each shape has a different way of calculating
 	
 	if shape == "square":
 		if answer == side1**2:
 			a_timer.start()
 			correct.visible = true
-			#print("that is correct!")
+	
 		else:
 			incorrect.visible = true
 			b_timer.start()
-			#print("that is incorrect!")
+	
 	elif shape == "triangle":
 		if answer == side1*side2*0.5:
 			a_timer.start()
 			correct.visible = true
-			#print("that is correct!")
+	
 		else:
 			incorrect.visible = true
 			b_timer.start()
-			#print("that is incorrect!")
-	elif shape == "right angle \ntriangle":
-		if answer == sqrt(side1**2+side2**2):
+	
+	elif shape == "cube":
+		if answer == side1**3 :
 			a_timer.start()
 			correct.visible = true
-			#print("that is correct!")
+	
 		else:
 			incorrect.visible = true
 			b_timer.start()
-			#print("that is incorrect!")
+	
 	else:
 		if answer == side1 * side2:
 			a_timer.start()
 			correct.visible = true
-			#print("that is correct!")
+	
 		else:
 			incorrect.visible = true
 			b_timer.start()
-			#print("that is incorrect!")
+	
 	line_edit.text = ""
 	answered = true
-	
-	
 
 func _correct_timer() -> void:
 	correct.visible = false
+	qnum += 1
 	if answered == true:
 		_ready()
 		answered = false
@@ -173,3 +177,6 @@ func _incorrect_timer() -> void:
 	if answered == true:
 		_ready()
 		answered = false
+
+func end():
+	get_tree().change_scene_to_file("res://scenes/math_level.tscn")
