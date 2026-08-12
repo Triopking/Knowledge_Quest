@@ -1,18 +1,36 @@
-[gd_scene format=4 uid="uid://cdwv2rlkm26yd"]
+[gd_scene format=4 uid="uid://gasese18csuh"]
 
 [ext_resource type="Script" uid="uid://clnpqe0dbdebj" path="res://scripts/labratory.gd" id="1_ab820"]
 [ext_resource type="PackedScene" uid="uid://cwn2u0rfsc7tt" path="res://scenes/player.tscn" id="1_pifv7"]
 [ext_resource type="Texture2D" uid="uid://bkn305ykxdbjo" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Tile/Tile_13-256x256.png" id="2_02c0y"]
+[ext_resource type="Texture2D" uid="uid://c4ityel67sslk" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Bricks/Bricks_20-256x256.png" id="2_li6un"]
 [ext_resource type="Texture2D" uid="uid://c3papiddf1lbj" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Tile/Tile_21-256x256.png" id="4_02c0y"]
+[ext_resource type="Texture2D" uid="uid://d72c262b0m7p" path="res://assets/Note.png" id="5_73ss4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73ss4"]
+texture = ExtResource("2_li6un")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_leulr"]
+vertices = PackedVector2Array(128, 128, -128, 128, -128, -128, 128, -128)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)])
+agent_radius = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_li6un"]
 texture = ExtResource("2_02c0y")
 texture_region_size = Vector2i(256, 256)
 0:0/0 = 0
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_leulr")
 
 [sub_resource type="TileSet" id="TileSet_73ss4"]
 tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 sources/2 = SubResource("TileSetAtlasSource_li6un")
+sources/0 = SubResource("TileSetAtlasSource_73ss4")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_53hmh"]
 vertices = PackedVector2Array(990.5, -581.27344, 972.5, 587.8125, -971.8203, 594.1797, -995.1328, -582.71875)
@@ -42,13 +60,14 @@ offset_bottom = 1318.0
 color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1700534790]
-tile_map_data = PackedByteArray("AAD8//7/AgAAAAAAAAD+//7/AgAAAAAAAAD9//7/AgAAAAAAAAD///7/AgAAAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAACAP7/AgAAAAAAAAADAP7/AgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAgAAAAAAAAACAAIAAgAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wIAAgAAAAAAAAD9/wIAAgAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAD//wIAAgAAAAAAAAD9/wAAAgAAAAAAAAD9////AgAAAAAAAAD8////AgAAAAAAAAD8/wAAAgAAAAAAAAD8/wIAAgAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAD/////AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAACAP//AgAAAAAAAAABAP//AgAAAAAAAAD8//3/AgAAAAAAAAD9//3/AgAAAAAAAAD+//3/AgAAAAAAAAD///3/AgAAAAAAAAAAAP3/AgAAAAAAAAABAP3/AgAAAAAAAAACAP3/AgAAAAAAAAADAP3/AgAAAAAAAAAEAP3/AgAAAAAAAAAEAP7/AgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAIAAgAAAAAAAAD7/wIAAgAAAAAAAAD7/wEAAgAAAAAAAAD7/wAAAgAAAAAAAAD7////AgAAAAAAAAD7//7/AgAAAAAAAAD7//3/AgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8//7/AgAAAAAAAAD+//7/AgAAAAAAAAD9//7/AgAAAAAAAAD///7/AgAAAAAAAAAAAP7/AgAAAAAAAAABAP7/AgAAAAAAAAACAP7/AgAAAAAAAAADAP7/AgAAAAAAAAADAP//AgAAAAAAAAADAAAAAgAAAAAAAAADAAEAAgAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAgAAAAAAAAABAAEAAgAAAAAAAAAAAAEAAgAAAAAAAAD//wEAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wEAAgAAAAAAAAD8/wEAAgAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD9/wAAAgAAAAAAAAD9////AgAAAAAAAAD8////AgAAAAAAAAD8/wAAAgAAAAAAAAD8/wIAAAAAAAAAAAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAD//wAAAgAAAAAAAAD/////AgAAAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAgAAAAAAAAACAAAAAgAAAAAAAAACAP//AgAAAAAAAAABAP//AgAAAAAAAAD8//3/AAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wAAAAAAAAAAAAD7////AAAAAAAAAAD7//7/AAAAAAAAAAD7//3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_73ss4")
 
 [node name="Player" parent="." unique_id=876340452 instance=ExtResource("1_pifv7")]
 z_index = 5
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1550333502]
+z_index = 2
 zoom = Vector2(0.595, 0.595)
 limit_left = -1068
 limit_top = -626
@@ -56,6 +75,28 @@ limit_right = 1074
 limit_bottom = 656
 position_smoothing_enabled = true
 position_smoothing_speed = 0.575
+
+[node name="Note" type="Sprite2D" parent="Player/Camera2D" unique_id=1632891206]
+position = Vector2(-692, -205)
+texture = ExtResource("5_73ss4")
+
+[node name="Label" type="Label" parent="Player/Camera2D/Note" unique_id=952823005]
+offset_left = -187.0
+offset_top = -258.0
+offset_right = 180.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Welcome to the 
+The Labratory, 
+click using the mouse 
+button to move around,
+
+Salrog is seeking out 
+the knowledge core of
+mathamatics, and it is
+your job to stop him!
+"
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1570028070]
 rotation = 0.0022606356
@@ -93,6 +134,7 @@ text = "Press 'e'"
 position = Vector2(28.000051, 33.99997)
 scale = Vector2(37.84375, 21.875)
 texture = SubResource("GradientTexture2D_li6un")
+metadata/_edit_lock_ = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -10,6 +10,21 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevby"]
 
+[sub_resource type="Gradient" id="Gradient_lonik"]
+offsets = PackedFloat32Array(0.48125, 0.55)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gykmk"]
+gradient = SubResource("Gradient_lonik")
+fill = 2
+fill_from = Vector2(0.51953125, 0.5078125)
+fill_to = Vector2(0.64684016, 0.39405206)
+
+[sub_resource type="Curve" id="Curve_84vdc"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.03125, -1), 0.0, 0.0, 0, 0, Vector2(0.29166666, 0.9698114), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="ShapeProblem" type="Node2D" unique_id=1572927992]
 script = ExtResource("1_5ul6q")
 
@@ -170,6 +185,35 @@ text = "Correct"
 [node name="Timer" type="Timer" parent="CanvasLayer/Correct" unique_id=1030771271]
 wait_time = 3.0
 one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/Correct" unique_id=646824230]
+z_index = 2
+position = Vector2(577.99994, 550)
+scale = Vector2(2.84, 2.84)
+emitting = false
+amount = 122
+texture = SubResource("GradientTexture2D_gykmk")
+lifetime = 0.9
+preprocess = 3.8
+speed_scale = 0.89
+explosiveness = 0.34
+randomness = 0.21
+emission_shape = 2
+emission_sphere_radius = 9.09
+direction = Vector2(0, 0)
+gravity = Vector2(0, -289.475)
+angular_velocity_min = -322.99
+angular_velocity_max = 720.0
+linear_accel_min = -5.61
+linear_accel_max = 1.87
+radial_accel_min = 100.0
+radial_accel_max = 100.0
+tangential_accel_min = -100.0
+tangential_accel_max = -100.0
+color = Color(1, 0, 0, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_84vdc")
 
 [node name="Incorrect" type="ColorRect" parent="CanvasLayer" unique_id=166635821]
 visible = false

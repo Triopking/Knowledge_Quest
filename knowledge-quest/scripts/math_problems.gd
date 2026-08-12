@@ -39,6 +39,11 @@ extends Node2D
 #question number display
 @onready var questions: Sprite2D = $Questions
 
+#particles
+@onready var particles: CPUParticles2D = $CanvasLayer/Correct/CPUParticles2D
+
+
+
 #shapes
 var shape
 	
@@ -57,8 +62,10 @@ func _ready() -> void:
 	
 	if qnum > 3:
 		end()
+	else:
+		questions.frame = qnum
 	
-	line_edit.grab_focus()
+	
 	line_edit.caret_column = (len(line_edit.text))
 	triangle.visible = false
 	rectangle.visible = false
@@ -66,8 +73,8 @@ func _ready() -> void:
 	square.visible = false
 	correct.visible = false
 	incorrect.visible = false
+	#particles.emitting = false
 	
-	questions.frame = qnum
 	
 	var rand = randi()%4
 	
@@ -92,9 +99,9 @@ func _ready() -> void:
 	
 	
 	if shape == "triangle":
-		side1 = randi()%10+1
+		side1 = randi()%10+2
 		b_triangle.text = str(side1)
-		side2 = randi()%15+2
+		side2 = randi()%10+2
 		h_triangle.text = str(side2)
 		
 	if shape == "rectangle":
@@ -104,19 +111,19 @@ func _ready() -> void:
 		h_rectangle.text = str(side2)
 		
 	if shape == "cube":
-		side1 = randi()%10+1
+		side1 = randi()%5+1
 		l.text = str(side1)
 		
 		
 	if shape == "square":
-		side1 = randi()%10+2
+		side1 = randi()%8+2
 		s_square.text = str(side1)
 	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta: float) -> void:
-	pass
+	line_edit.grab_focus()
 	
 
 
@@ -165,7 +172,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	answered = true
 
 func _correct_timer() -> void:
+	# is supposed to emit particles when correct
+	particles.emitting = true
 	correct.visible = false
+	
 	qnum += 1
 	if answered == true:
 		_ready()

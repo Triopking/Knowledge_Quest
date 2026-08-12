@@ -7,7 +7,7 @@ const SPEED = 20000
 var direction: Vector2
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click"):#when the player clicks the mouse button
+	if (Input.is_action_just_pressed("click") or Input.is_mouse_button_pressed(1)) and Global.reading_note == false:#when the player clicks the mouse button
 		pos_to_go_to = get_global_mouse_position()
 		#print(pos_to_go_to)
 		
