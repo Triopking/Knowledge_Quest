@@ -12,15 +12,20 @@ extends Node2D
 #note inspection
 @onready var note_inspection: ColorRect = $Player/CanvasLayer/NoteInspection
 @onready var note_label: Label = $Player/CanvasLayer/NoteInspection/Label
+@onready var paper: AudioStreamPlayer = $Player/CanvasLayer/NoteInspection/Paper
 
 #note 1
 @onready var note_1_label: Label = $Notes/Note2/note1Label
+#note 2
+@onready var note_2_label: Label = $Notes/Note3/note2Label
+
 
 
 var press
 var note_view
 
 var note_1
+var note_2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,8 +33,8 @@ func _ready() -> void:
 	label.visible = false
 	note_inspection.visible = false
 	if Global.shape_problem == true:
-		#player.set_global_position(marker.global_position)
-		pass
+		player.set_global_position(marker.global_position)
+		
 
 
 
@@ -48,6 +53,12 @@ func _process(_delta: float) -> void:
 					h * b * 1/2"
 		note_label.text = note_view
 		closer_look()
+	elif note_2 == true and Input.is_action_just_pressed("interact"):
+		note_view = "To calculate the
+					area of a 
+					square,
+					It is equal:
+					s * s"
 	
 
 
@@ -75,9 +86,11 @@ func _on_note_button_pressed() -> void:
 
 #note inspection and different notes
 func closer_look():
+	paper.play()
 	note_inspection.visible = true
 	Global.reading_note = true
 
+#first note
 func _on_note_1_entered(body: Node2D) -> void:
 	if body == player:
 		note_1_label.visible = true
@@ -86,3 +99,14 @@ func _on_note_1_exited(body: Node2D) -> void:
 	if body == player:
 		note_1_label.visible = false
 		note_1 = false
+
+
+func _on_note_2_entered(body: Node2D) -> void:
+	if body == player:
+		note_2_label.visible = true
+		note_2 = true
+
+func _on_note_2_exited(body: Node2D) -> void:
+	if body == player:
+		note_2_label.visible = false
+		note_2 = false

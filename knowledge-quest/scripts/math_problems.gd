@@ -38,11 +38,14 @@ extends Node2D
 
 #question number display
 @onready var questions: Sprite2D = $Questions
+#health display
+@onready var health_bar: Sprite2D = $Health
 
 #particles
 @onready var particles: CPUParticles2D = $CanvasLayer/Correct/CPUParticles2D
 
-
+#sounds
+@onready var next_question: AudioStreamPlayer = $"Next question"
 
 #shapes
 var shape
@@ -53,6 +56,8 @@ var side2
 
 #number of questions
 var qnum = 0
+#amount of health
+var health = 3
 #answered the question
 var answered = false
 
@@ -62,8 +67,11 @@ func _ready() -> void:
 	
 	if qnum > 3:
 		end()
+	elif health == 1:
+		pass
 	else:
 		questions.frame = qnum
+		health_bar.frame = health
 	
 	
 	line_edit.caret_column = (len(line_edit.text))
@@ -184,6 +192,7 @@ func _correct_timer() -> void:
 
 func _incorrect_timer() -> void:
 	incorrect.visible = false
+	health -= 1
 	if answered == true:
 		_ready()
 		answered = false

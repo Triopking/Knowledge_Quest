@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://icsglshkoicp" path="res://assets/Square.png" id="5_cr1mp"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="6_gnfao"]
 [ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/questions.png" id="6_lonik"]
+[ext_resource type="Texture2D" uid="uid://dijhe46qmtk36" path="res://assets/Health.png" id="8_gykmk"]
+[ext_resource type="AudioStream" uid="uid://dn1ptwxdjlihg" path="res://sounds/utopia_asterisk.mp3" id="9_84vdc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oevby"]
 
@@ -32,6 +34,7 @@ script = ExtResource("1_5ul6q")
 offset_left = 2.0
 offset_right = 1152.0
 offset_bottom = 648.0
+metadata/_edit_lock_ = true
 
 [node name="Question" type="Label" parent="." unique_id=1706680340]
 anchors_preset = 5
@@ -157,6 +160,13 @@ position = Vector2(171, 100)
 texture = ExtResource("6_lonik")
 vframes = 4
 
+[node name="Health" type="Sprite2D" parent="." unique_id=575029860]
+texture_filter = 1
+position = Vector2(171, 165)
+texture = ExtResource("8_gykmk")
+vframes = 4
+frame = 3
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1747068676]
 
 [node name="Correct" type="ColorRect" parent="CanvasLayer" unique_id=138682492]
@@ -241,6 +251,9 @@ text = "Incorrect"
 [node name="Timer" type="Timer" parent="CanvasLayer/Incorrect" unique_id=2042739920]
 wait_time = 3.0
 one_shot = true
+
+[node name="Next question" type="AudioStreamPlayer" parent="." unique_id=1469865043]
+stream = ExtResource("9_84vdc")
 
 [connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
 [connection signal="timeout" from="CanvasLayer/Correct/Timer" to="." method="_correct_timer"]

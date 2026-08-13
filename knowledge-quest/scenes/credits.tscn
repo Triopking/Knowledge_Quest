@@ -40,13 +40,19 @@ Fonts:
 Circus by Dan Roseman
 
 Assets:
-Screaming Brain studios for textures"
+Screaming Brain studios for textures
+
+Sounds:
+Utopia Asterisk provided by ccarp511"
 
 [node name="Label2" type="Label" parent="." unique_id=145989046]
 layout_mode = 0
 offset_left = 549.0
+offset_top = 16.0
 offset_right = 1151.0
 offset_bottom = 647.0
+text = "Playtesters:
+Jet White"
 
 [node name="GoBack" type="Button" parent="." unique_id=2008040917]
 layout_mode = 0
