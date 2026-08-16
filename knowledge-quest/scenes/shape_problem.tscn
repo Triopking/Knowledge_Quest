@@ -65,6 +65,7 @@ text_direction = 1
 
 [node name="Triangle" type="Sprite2D" parent="Shapes" unique_id=430966352]
 visible = false
+texture_filter = 1
 position = Vector2(533, 300)
 scale = Vector2(1.7611113, 1.7611111)
 texture = ExtResource("2_lonik")
@@ -92,6 +93,7 @@ offset_bottom = 82.05362
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Rectangle" type="Sprite2D" parent="Shapes" unique_id=325774048]
+texture_filter = 1
 position = Vector2(533, 299.5)
 scale = Vector2(1.4849786, 1.5023698)
 texture = ExtResource("3_gykmk")
@@ -119,6 +121,7 @@ offset_bottom = 20.00474
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="Cube" type="Sprite2D" parent="Shapes" unique_id=1081061725]
+texture_filter = 1
 position = Vector2(506, 302)
 scale = Vector2(2.6666663, 2.3843584)
 texture = ExtResource("4_lonik")
@@ -135,6 +138,7 @@ text = "?"
 
 [node name="Square" type="Sprite2D" parent="Shapes" unique_id=559945917]
 visible = false
+texture_filter = 1
 position = Vector2(533.25, 300.75)
 scale = Vector2(1.4828327, 1.514218)
 texture = ExtResource("5_cr1mp")

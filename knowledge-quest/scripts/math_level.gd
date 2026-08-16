@@ -30,6 +30,7 @@ var note_2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	note_1_label.visible = false
+	note_2_label.visible = false
 	label.visible = false
 	note_inspection.visible = false
 	if Global.shape_problem == true:
@@ -59,6 +60,8 @@ func _process(_delta: float) -> void:
 					square,
 					It is equal:
 					s * s"
+		note_label.text = note_view
+		closer_look()
 	
 
 
