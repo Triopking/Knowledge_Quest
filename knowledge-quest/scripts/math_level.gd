@@ -33,6 +33,7 @@ func _ready() -> void:
 	note_2_label.visible = false
 	label.visible = false
 	note_inspection.visible = false
+	$Player/CanvasLayer/ProgressBar.value = Global.salrog_progress
 	if Global.shape_problem == true:
 		player.set_global_position(marker.global_position)
 		

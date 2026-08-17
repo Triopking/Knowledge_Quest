@@ -14,10 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://du0boiqyduta5" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Grass/Grass_20-256x256.png" id="7_rosn2"]
 [ext_resource type="Texture2D" uid="uid://d72c262b0m7p" path="res://assets/Note.png" id="9_5d4p0"]
 [ext_resource type="Texture2D" uid="uid://b1j5cfln0ejjv" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Tile/Tile_04-256x256.png" id="9_aipl8"]
-[ext_resource type="Texture2D" uid="uid://diqvyula0y78u" path="res://assets/XButton.png" id="13_rosn2"]
-[ext_resource type="Texture2D" uid="uid://bpncbi33786il" path="res://assets/XButtonPressed.png" id="14_fgnrj"]
-[ext_resource type="Texture2D" uid="uid://bhhnffb6g0qho" path="res://assets/XButtonHover.png" id="15_gy8ib"]
+[ext_resource type="Texture2D" uid="uid://diqvyula0y78u" path="res://assets/X_Button.png" id="13_rosn2"]
+[ext_resource type="Texture2D" uid="uid://bpncbi33786il" path="res://assets/X_Button_Pressed.png" id="14_fgnrj"]
+[ext_resource type="Texture2D" uid="uid://bhhnffb6g0qho" path="res://assets/X_Button_Hover.png" id="15_gy8ib"]
 [ext_resource type="AudioStream" uid="uid://ox6lpje4otnc" path="res://sounds/paper.wav" id="17_824lh"]
+[ext_resource type="Texture2D" uid="uid://bp31kfow7degw" path="res://assets/Red_Key.png" id="19_uhh51"]
 
 [sub_resource type="Gradient" id="Gradient_osymv"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -430,6 +431,8 @@ texture_hover = ExtResource("15_gy8ib")
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0, 0, 0.6156863)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Note" type="Sprite2D" parent="Player/CanvasLayer/NoteInspection" unique_id=1363375135]
 texture_filter = 1
@@ -473,6 +476,15 @@ offset_right = 214.0
 offset_bottom = 110.0
 theme_override_font_sizes/font_size = 22
 text = "This door needs a red key!"
+
+[node name="RedKey" type="Sprite2D" parent="Player/CanvasLayer" unique_id=1209915062]
+visible = false
+texture_filter = 1
+position = Vector2(42, 137)
+scale = Vector2(0.54545456, 0.54545456)
+texture = ExtResource("19_uhh51")
+region_enabled = true
+region_rect = Rect2(74, 9, 66, 162)
 
 [node name="question1" type="Area2D" parent="." unique_id=1049972453]
 position = Vector2(2297, 2026)

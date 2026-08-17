@@ -68,7 +68,7 @@ func _ready() -> void:
 	if qnum > 3:
 		end()
 	elif health == 1:
-		pass
+		bad_end()
 	else:
 		questions.frame = qnum
 		health_bar.frame = health
@@ -197,5 +197,10 @@ func _incorrect_timer() -> void:
 		_ready()
 		answered = false
 
+func bad_end():
+	Global.red_key = false
+	Global.salrog_progress += 2
+	get_tree().change_scene_to_file("res://scenes/math_level.tscn")
 func end():
+	Global.red_key = true
 	get_tree().change_scene_to_file("res://scenes/math_level.tscn")
