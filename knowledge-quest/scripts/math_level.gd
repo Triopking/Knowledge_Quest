@@ -18,7 +18,10 @@ extends Node2D
 @onready var note_1_label: Label = $Notes/Note2/note1Label
 #note 2
 @onready var note_2_label: Label = $Notes/Note3/note2Label
-
+# note 3
+@onready var note_3_label: Label = $Notes/Note4/note3Label
+# note 4
+@onready var note_4_label: Label = $Notes/Note5/note3Label
 
 
 var press
@@ -26,14 +29,32 @@ var note_view
 
 var note_1
 var note_2
+var note_3
+var note_4
+
+var door
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	note_1_label.visible = false
 	note_2_label.visible = false
+	note_3_label.visible = false
 	label.visible = false
 	note_inspection.visible = false
 	$Player/CanvasLayer/ProgressBar.value = Global.salrog_progress
+	$Door/Area2D/CollisionShape2D.disabled = false
+	
+	if Global.red_key == true:
+		$Player/CanvasLayer/ProgressBar/RedKey.visible = true
+	elif Global.red_key == false:
+		$Player/CanvasLayer/ProgressBar/RedKey.visible = false
+	
+	if Global.red_door == true:
+		$AnimationPlayer.play("open_sesame")
+		$Door/Area2D/CollisionShape2D.disabled = true
+	elif Global.red_door == false:
+		$AnimationPlayer.play("RESET")
+	
 	if Global.shape_problem == true:
 		player.set_global_position(marker.global_position)
 		
@@ -62,7 +83,27 @@ func _process(_delta: float) -> void:
 					It is equal:
 					s * s"
 		note_label.text = note_view
+	elif note_3 == true and Input.is_action_just_pressed("interact"):
+		note_view = "To calculate the
+					area of a
+					cube,
+					It is equal:
+					L * L * L"
+		note_label.text = note_view
+	elif note_4 == true and Input.is_action_just_pressed("interact"):
+		note_view = "To calculate the
+					area of a
+					rectangle,
+					It is equal:
+					h * L"
+		note_label.text = note_view
 		closer_look()
+	
+	if door == true and Input.is_action_just_pressed("interact"):
+		$AnimationPlayer.play("open_sesame")
+		Global.red_door = true
+		$Door/Area2D/CollisionShape2D.disabled = true
+	
 	
 
 
@@ -104,7 +145,7 @@ func _on_note_1_exited(body: Node2D) -> void:
 		note_1_label.visible = false
 		note_1 = false
 
-
+#second note
 func _on_note_2_entered(body: Node2D) -> void:
 	if body == player:
 		note_2_label.visible = true
@@ -114,3 +155,38 @@ func _on_note_2_exited(body: Node2D) -> void:
 	if body == player:
 		note_2_label.visible = false
 		note_2 = false
+
+#third note
+func _on_note_3_entered(body: Node2D) -> void:
+	if body == player:
+		note_3_label.visible = true
+		note_3 = true
+
+func _on_note_3_body_exited(body: Node2D) -> void:
+	if body == player:
+		note_3_label.visible = false
+		note_3 = false
+#fourth note
+func _on_note_4_body_entered(body: Node2D) -> void:
+	if body == player:
+		note_4_label.visible = true
+		note_4 = true
+
+func _on_note_4_body_exited(body: Node2D) -> void:
+	if body == player:
+		note_4_label.visible = false
+		note_4 = false
+
+#entrance on door
+func _on_door_body_entered(body: Node2D) -> void:
+	if body == player and Global.red_key == true:
+		$Door/Label.text = "You have the key to unlock this door!"
+		$Door/Label.visible = true
+		door = true
+	elif body == player and Global.red_key == false:
+		$Door/Label.text = "This door needs a key to open, \ncome back when you have it"
+		$Door/Label.visible = true
+
+func _on_door_body_exited(body: Node2D) -> void:
+	$Door/Label.visible = false
+	door = false

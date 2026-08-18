@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ityel67sslk" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Bricks/Bricks_20-256x256.png" id="2_li6un"]
 [ext_resource type="Texture2D" uid="uid://c3papiddf1lbj" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Tile/Tile_21-256x256.png" id="4_02c0y"]
 [ext_resource type="Texture2D" uid="uid://d72c262b0m7p" path="res://assets/Note.png" id="5_73ss4"]
+[ext_resource type="AudioStream" uid="uid://dn1ptwxdjlihg" path="res://sounds/utopia_asterisk.mp3" id="7_leulr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73ss4"]
 texture = ExtResource("2_li6un")
@@ -137,6 +138,10 @@ position = Vector2(28.000051, 33.99997)
 scale = Vector2(37.84375, 21.875)
 texture = SubResource("GradientTexture2D_li6un")
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=409141132]
+stream = ExtResource("7_leulr")
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

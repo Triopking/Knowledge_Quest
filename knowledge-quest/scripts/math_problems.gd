@@ -109,7 +109,7 @@ func _ready() -> void:
 	if shape == "triangle":
 		side1 = randi()%10+2
 		b_triangle.text = str(side1)
-		side2 = randi()%10+2
+		side2 = side1+1
 		h_triangle.text = str(side2)
 		
 	if shape == "rectangle":
