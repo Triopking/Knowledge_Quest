@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bhhnffb6g0qho" path="res://assets/X_Button_Hover.png" id="15_gy8ib"]
 [ext_resource type="AudioStream" uid="uid://ox6lpje4otnc" path="res://sounds/paper.wav" id="17_824lh"]
 [ext_resource type="Texture2D" uid="uid://bp31kfow7degw" path="res://assets/Red_Key.png" id="19_uhh51"]
+[ext_resource type="AudioStream" uid="uid://ox1ort8t014k" path="res://sounds/Jaw harp3.mp3" id="20_87bkq"]
 
 [sub_resource type="Gradient" id="Gradient_osymv"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -525,6 +526,9 @@ texture_hover = ExtResource("15_gy8ib")
 
 [node name="Paper" type="AudioStreamPlayer" parent="Player/CanvasLayer/NoteInspection" unique_id=528132336]
 stream = ExtResource("17_824lh")
+
+[node name="Close" type="AudioStreamPlayer" parent="Player/CanvasLayer/NoteInspection" unique_id=1380212009]
+stream = ExtResource("20_87bkq")
 
 [node name="question1" type="Area2D" parent="." unique_id=1049972453]
 position = Vector2(2297, 2026)

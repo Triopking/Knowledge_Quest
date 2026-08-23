@@ -21,7 +21,7 @@ extends Node2D
 # note 3
 @onready var note_3_label: Label = $Notes/Note4/note3Label
 # note 4
-@onready var note_4_label: Label = $Notes/Note5/note3Label
+@onready var note_4_label: Label = $Notes/Note5/note4Label
 
 
 var press
@@ -39,7 +39,14 @@ func _ready() -> void:
 	note_1_label.visible = false
 	note_2_label.visible = false
 	note_3_label.visible = false
+	note_4_label.visible = false
 	label.visible = false
+	
+	note_1 = false
+	note_2 = false
+	note_3 = false
+	note_4 = false
+	
 	note_inspection.visible = false
 	$Player/CanvasLayer/ProgressBar.value = Global.salrog_progress
 	$Door/Area2D/CollisionShape2D.disabled = false
@@ -83,6 +90,7 @@ func _process(_delta: float) -> void:
 					It is equal:
 					s * s"
 		note_label.text = note_view
+		closer_look()
 	elif note_3 == true and Input.is_action_just_pressed("interact"):
 		note_view = "To calculate the
 					area of a
@@ -90,6 +98,7 @@ func _process(_delta: float) -> void:
 					It is equal:
 					L * L * L"
 		note_label.text = note_view
+		closer_look()
 	elif note_4 == true and Input.is_action_just_pressed("interact"):
 		note_view = "To calculate the
 					area of a
@@ -127,7 +136,7 @@ func _on_button_pressed() -> void:
 func _on_note_button_pressed() -> void:
 	note_inspection.visible = false
 	Global.reading_note = false
-	
+	$Player/CanvasLayer/NoteInspection/Close.play()
 
 #note inspection and different notes
 func closer_look():
@@ -188,5 +197,6 @@ func _on_door_body_entered(body: Node2D) -> void:
 		$Door/Label.visible = true
 
 func _on_door_body_exited(body: Node2D) -> void:
-	$Door/Label.visible = false
-	door = false
+	if  body == player:
+		$Door/Label.visible = false
+		door = false

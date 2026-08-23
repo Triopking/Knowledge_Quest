@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bclk31j20q0mn"
+path="res://.godot/imported/Jaw harp.mp3-cfe5213da30b1ba57be0ff265409ee15.mp3str"
+
+[deps]
+
+source_file="res://sounds/Jaw harp.mp3"
+dest_files=["res://.godot/imported/Jaw harp.mp3-cfe5213da30b1ba57be0ff265409ee15.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
