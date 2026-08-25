@@ -43,7 +43,8 @@ Assets:
 Screaming Brain studios for textures
 
 Sounds:
-Utopia Asterisk provided by ccarp511"
+Utopia Asterisk provided by ccarp511
+book open by benji1"
 
 [node name="Label2" type="Label" parent="." unique_id=145989046]
 layout_mode = 0
