@@ -370,7 +370,7 @@ pick up"
 
 [node name="Note3" type="Sprite2D" parent="Notes" unique_id=1044301882]
 texture_filter = 1
-position = Vector2(-918, -2417)
+position = Vector2(982.0001, -3867)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -393,7 +393,7 @@ pick up"
 
 [node name="Note4" type="Sprite2D" parent="Notes" unique_id=1266055049]
 texture_filter = 1
-position = Vector2(-6286, -3197)
+position = Vector2(-5008.0005, -3177.0002)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -416,7 +416,7 @@ pick up"
 
 [node name="Note5" type="Sprite2D" parent="Notes" unique_id=1672089231]
 texture_filter = 1
-position = Vector2(482.9995, -5031)
+position = Vector2(-859, -3146)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
