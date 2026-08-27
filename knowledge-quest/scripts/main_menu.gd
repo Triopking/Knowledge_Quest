@@ -12,25 +12,30 @@ func _process(_delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/labratory.tscn")
+	$start/Timer.start()
+	$start/AudioStreamPlayer.play()
 
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	$quit/Timer2.start()
+	$quit/AudioStreamPlayer.play()
 
 
 func _on_credits_pressed() -> void:
+	$Node2D/Timer3.start()
+	$Node2D/AudioStreamPlayer.play()
+
+
+
+
+
+func _on_timer1_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/labratory.tscn")
+
+
+func _on_timer_2_timeout() -> void:
+	get_tree().quit()
+
+
+func _on_timer_3_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/credits.tscn")
-
-
-
-func _on_start_timeout() -> void:
-	pass # Replace with function body.
-
-
-func _on_quit_2_timeout() -> void:
-	pass # Replace with function body.
-
-
-func _on_credits_3_timeout() -> void:
-	pass # Replace with function body.

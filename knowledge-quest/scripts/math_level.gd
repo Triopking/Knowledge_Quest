@@ -33,14 +33,17 @@ var note_3
 var note_4
 
 var door
+var end
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#sets everything up, mainly hides all the notes press 'e' message
 	note_1_label.visible = false
 	note_2_label.visible = false
 	note_3_label.visible = false
 	note_4_label.visible = false
 	label.visible = false
+	$KnowledgeCore/Label.visible = false
 	
 	note_1 = false
 	note_2 = false
@@ -64,13 +67,17 @@ func _ready() -> void:
 	
 	if Global.shape_problem == true:
 		player.set_global_position(marker.global_position)
-		
+	
+	if Global.salrog_progress == 10:
+		get_tree().change_scene_to_file("res://end.tscn")
 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
+	#most of these are just detections for when the player presses 
+	#the 'e' key when on top of notes or the math problem.
 	
 	if press == true and Input.is_action_just_pressed("interact"):
 		Global.shape_problem = true
@@ -113,7 +120,8 @@ func _process(_delta: float) -> void:
 		Global.red_door = true
 		$Door/Area2D/CollisionShape2D.disabled = true
 	
-	
+	if end == true and Input.is_action_just_pressed("interact"):
+		get_tree().change_scene_to_file("res://end.tscn")
 
 
 func _question1_body_entered(body: Node2D) -> void:
@@ -200,3 +208,15 @@ func _on_door_body_exited(body: Node2D) -> void:
 	if  body == player:
 		$Door/Label.visible = false
 		door = false
+
+
+func _on_finish_entered(body: Node2D) -> void:
+	if body == player:
+		end = true
+		$KnowledgeCore/Label.visible = true
+
+
+func _on_finish_exited(body: Node2D) -> void:
+	if body == player:
+		end = false
+		$KnowledgeCore/Label.visible = false

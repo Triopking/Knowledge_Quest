@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dq1no5e0wu70g"]
+
+[ext_resource type="Script" uid="uid://bhuvmekeulpfg" path="res://end.gd" id="1_n735c"]
+
+[node name="End" type="Control" unique_id=1036131075]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n735c")
+
+[node name="Label" type="Label" parent="." unique_id=123449558]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -457.0
+offset_right = 464.0
+offset_bottom = 309.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 55
+text = "Thank you for playing my game.
+
+Come back again some other time."
+
+[node name="Button" type="Button" parent="." unique_id=1744134978]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30800003
+anchor_top = 0.623
+anchor_right = 0.65300006
+anchor_bottom = 0.80100006
+offset_left = 0.18395996
+offset_top = 0.29599
+offset_right = -0.25604248
+offset_bottom = -0.048034668
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 54
+text = "End"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

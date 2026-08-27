@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c7jhfaieut1i8" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="2_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://bclk31j20q0mn" path="res://sounds/Jaw harp.mp3" id="3_8ln24"]
+[ext_resource type="AudioStream" uid="uid://ernfgbiikljs" path="res://sounds/Jaw harp2.mp3" id="4_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://ox1ort8t014k" path="res://sounds/Jaw harp3.mp3" id="5_oa1go"]
 
 [sub_resource type="Animation" id="Animation_wu84c"]
 resource_name = "Intro"
@@ -163,6 +166,12 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Start"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="start" unique_id=776488801]
+stream = ExtResource("3_8ln24")
+
+[node name="Timer" type="Timer" parent="start" unique_id=1652704974]
+wait_time = 2.0
+
 [node name="quit" type="Control" parent="." unique_id=183092083]
 anchors_preset = 0
 metadata/_edit_group_ = true
@@ -182,6 +191,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 46
 text = "Quit"
+
+[node name="Timer2" type="Timer" parent="quit" unique_id=1650941454]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="quit" unique_id=1594952228]
+stream = ExtResource("4_rtw2f")
 
 [node name="Node2D" type="Control" parent="." unique_id=1677301618]
 anchors_preset = 0
@@ -203,6 +218,15 @@ theme_override_font_sizes/font_size = 46
 text = "Credits"
 metadata/_edit_use_anchors_ = true
 
+[node name="Timer3" type="Timer" parent="Node2D" unique_id=1712801397]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D" unique_id=215732254]
+stream = ExtResource("5_oa1go")
+
 [connection signal="pressed" from="start/start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="start/Timer" to="." method="_on_timer1_timeout"]
 [connection signal="pressed" from="quit/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="quit/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="pressed" from="Node2D/credits" to="." method="_on_credits_pressed"]
+[connection signal="timeout" from="Node2D/Timer3" to="." method="_on_timer_3_timeout"]
