@@ -67,7 +67,7 @@ func _ready() -> void:
 	
 	if qnum > 3:
 		end()
-	elif health == 1:
+	elif health == 0:
 		bad_end()
 	else:
 		questions.frame = qnum
@@ -144,8 +144,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		if answer == side1**2:
 			a_timer.start()
 			correct.visible = true
+			particles.emitting = true
 	
 		else:
+			$CanvasLayer/Incorrect/AudioStreamPlayer.play()
 			incorrect.visible = true
 			b_timer.start()
 	
@@ -153,8 +155,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		if answer == side1*side2*0.5:
 			a_timer.start()
 			correct.visible = true
+			particles.emitting = true
 	
 		else:
+			$CanvasLayer/Incorrect/AudioStreamPlayer.play()
 			incorrect.visible = true
 			b_timer.start()
 	
@@ -162,8 +166,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		if answer == side1**3 :
 			a_timer.start()
 			correct.visible = true
+			particles.emitting = true
 	
 		else:
+			$CanvasLayer/Incorrect/AudioStreamPlayer.play()
 			incorrect.visible = true
 			b_timer.start()
 	
@@ -171,8 +177,10 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 		if answer == side1 * side2:
 			a_timer.start()
 			correct.visible = true
+			particles.emitting = true
 	
 		else:
+			$CanvasLayer/Incorrect/AudioStreamPlayer.play()
 			incorrect.visible = true
 			b_timer.start()
 	
@@ -180,10 +188,7 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	answered = true
 
 func _correct_timer() -> void:
-	# is supposed to emit particles when correct
-	particles.emitting = true
 	correct.visible = false
-	
 	qnum += 1
 	if answered == true:
 		_ready()
@@ -193,6 +198,7 @@ func _correct_timer() -> void:
 func _incorrect_timer() -> void:
 	incorrect.visible = false
 	health -= 1
+	
 	if answered == true:
 		_ready()
 		answered = false

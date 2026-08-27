@@ -54,10 +54,10 @@ fill_to = Vector2(0.8888889, 0.1965812)
 script = ExtResource("1_ab820")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=750276073]
-offset_left = -1632.0
-offset_top = -930.0
-offset_right = 1733.0
-offset_bottom = 1318.0
+offset_left = -1733.0
+offset_top = -1163.0
+offset_right = 1596.0
+offset_bottom = 1066.0
 color = Color(0, 0, 0, 1)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1700534790]
@@ -66,7 +66,7 @@ tile_map_data = PackedByteArray("AAD8//7/AgAAAAAAAAD+//7/AgAAAAAAAAD9//7/AgAAAAA
 tile_set = SubResource("TileSet_73ss4")
 
 [node name="Player" parent="." unique_id=876340452 instance=ExtResource("1_pifv7")]
-z_index = 5
+z_index = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1550333502]
 z_index = 2
@@ -79,6 +79,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 0.575
 
 [node name="Note" type="Sprite2D" parent="Player/Camera2D" unique_id=1632891206]
+z_index = 3
 position = Vector2(-692, -205)
 texture = ExtResource("5_73ss4")
 
@@ -134,8 +135,9 @@ theme_override_font_sizes/font_size = 38
 text = "Press 'e'"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=374713161]
-position = Vector2(28.000051, 33.99997)
-scale = Vector2(37.84375, 21.875)
+z_index = 2
+position = Vector2(28.000051, 7.999958)
+scale = Vector2(37.84375, 21.0625)
 texture = SubResource("GradientTexture2D_li6un")
 metadata/_edit_lock_ = true
 
