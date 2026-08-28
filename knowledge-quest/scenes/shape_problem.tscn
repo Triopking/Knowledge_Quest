@@ -198,7 +198,7 @@ theme_override_font_sizes/font_size = 127
 text = "Correct"
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Correct" unique_id=1030771271]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/Correct" unique_id=646824230]
@@ -254,7 +254,7 @@ theme_override_font_sizes/font_size = 127
 text = "Incorrect"
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Incorrect" unique_id=2042739920]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Incorrect" unique_id=818834884]

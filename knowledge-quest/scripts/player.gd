@@ -2,7 +2,7 @@ extends CharacterBody2D
 #help from Bradely Cave to make the point and click mechanic
 #tutorial by Single-Minded Ryan & DevWorm for pathfinding
 var pos_to_go_to 
-const SPEED = 20000
+const SPEED = 30000
 @onready var path_follow_2d: NavigationAgent2D = $PathFollow2D
 var direction: Vector2
 
