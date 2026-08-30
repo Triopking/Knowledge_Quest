@@ -228,6 +228,7 @@ stream = ExtResource("5_oa1go")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=494154989]
 stream = ExtResource("6_rtw2f")
 autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="start/start" to="." method="_on_start_pressed"]
 [connection signal="timeout" from="start/Timer" to="." method="_on_timer1_timeout"]
