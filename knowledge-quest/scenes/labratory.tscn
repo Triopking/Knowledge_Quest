@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c3papiddf1lbj" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Tile/Tile_21-256x256.png" id="4_02c0y"]
 [ext_resource type="Texture2D" uid="uid://d72c262b0m7p" path="res://assets/Note.png" id="5_73ss4"]
 [ext_resource type="AudioStream" uid="uid://dn1ptwxdjlihg" path="res://sounds/utopia_asterisk.mp3" id="7_leulr"]
+[ext_resource type="AudioStream" uid="uid://b0u7mdq653s0w" path="res://sounds/Equatorial Complex.mp3" id="8_hvg6x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73ss4"]
 texture = ExtResource("2_li6un")
@@ -78,29 +79,6 @@ limit_bottom = 656
 position_smoothing_enabled = true
 position_smoothing_speed = 0.575
 
-[node name="Note" type="Sprite2D" parent="Player/Camera2D" unique_id=1632891206]
-z_index = 3
-position = Vector2(-692, -205)
-texture = ExtResource("5_73ss4")
-
-[node name="Label" type="Label" parent="Player/Camera2D/Note" unique_id=952823005]
-offset_left = -187.0
-offset_top = -258.0
-offset_right = 180.0
-offset_bottom = 262.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 34
-text = "Welcome to the 
-The Labratory, 
-click using the mouse 
-button to move around,
-
-Salrog is seeking out 
-the knowledge core of
-mathamatics, and it is
-your job to stop him!
-"
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1570028070]
 rotation = 0.0022606356
 navigation_polygon = SubResource("NavigationPolygon_53hmh")
@@ -141,9 +119,38 @@ scale = Vector2(37.84375, 21.0625)
 texture = SubResource("GradientTexture2D_li6un")
 metadata/_edit_lock_ = true
 
+[node name="Note" type="Sprite2D" parent="." unique_id=1632891206]
+z_index = 3
+position = Vector2(-589, -171)
+texture = ExtResource("5_73ss4")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Note" unique_id=952823005]
+offset_left = -187.0
+offset_top = -258.0
+offset_right = 180.0
+offset_bottom = 262.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "Welcome to the 
+The Labratory, 
+click using the mouse 
+button to move around,
+
+Salrog is seeking out 
+the knowledge core of
+mathamatics, and it is
+your job to stop him!
+"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=409141132]
 stream = ExtResource("7_leulr")
 autoplay = true
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=169464121]
+stream = ExtResource("8_hvg6x")
+parameters/looping = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

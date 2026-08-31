@@ -12,8 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if $AudioStreamPlayer.finished():
-		$AudioStreamPlayer2.play()
+	
 	if on == true and Input.is_action_pressed("interact"):
 		get_tree().change_scene_to_file("res://scenes/math_level.tscn")
 
@@ -29,3 +28,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		label.visible = false
 		on = false
 	
+
+
+func _on_audio_stream_player_finished() -> void:
+	$AudioStreamPlayer2.play()

@@ -50,6 +50,8 @@ func _ready() -> void:
 	note_3 = false
 	note_4 = false
 	
+	
+	
 	note_inspection.visible = false
 	$Player/CanvasLayer/ProgressBar.value = Global.salrog_progress
 	$Door/Area2D/CollisionShape2D.disabled = false

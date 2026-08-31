@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bp31kfow7degw" path="res://assets/Red_Key.png" id="19_uhh51"]
 [ext_resource type="AudioStream" uid="uid://ox1ort8t014k" path="res://sounds/Jaw harp3.mp3" id="20_87bkq"]
 [ext_resource type="Texture2D" uid="uid://cllm5m60ync33" path="res://assets/KnowledgeCore.png" id="21_2cbbw"]
+[ext_resource type="Texture2D" uid="uid://bqr0xymwbicvv" path="res://assets/SBS - Tiny Texture Pack - 256x256/256x256/Bricks/Bricks_22-256x256.png" id="23_w5d6t"]
 [ext_resource type="AudioStream" uid="uid://d0fm6erueb43h" path="res://sounds/The Entertainer.mp3" id="24_c4ud4"]
 
 [sub_resource type="Gradient" id="Gradient_osymv"]
@@ -272,6 +273,30 @@ tracks/5/keys = {
 "points": PackedFloat32Array(-5504, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Door/Sprite2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-511.00006, 0.125)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Door/Sprite2D2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(255.99998, -5503.875)]
+}
 
 [sub_resource type="Animation" id="Animation_uhh51"]
 resource_name = "open_sesame"
@@ -343,6 +368,30 @@ tracks/5/keys = {
 "points": PackedFloat32Array(-5504, -0.25, 0, 0.25, 0, -5504, -0.16666667, 0, 0, 0),
 "times": PackedFloat32Array(0, 1)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Door/Sprite2D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(767.99994, -5504), Vector2(1281, -5506)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Door/Sprite2D2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(255.99998, -5503.875), Vector2(-256, -5503.9995)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5d4p0"]
 _data = {
@@ -355,6 +404,13 @@ size = Vector2(512, 256)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87bkq"]
 size = Vector2(512, 256)
+
+[sub_resource type="Gradient" id="Gradient_domtr"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 0, 0.28235295)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5xwge"]
+gradient = SubResource("Gradient_domtr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhh51"]
 size = Vector2(1024, 41)
@@ -601,7 +657,7 @@ text = "Remember to collect notes along
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(768, -5504)
-texture = ExtResource("4_fgnrj")
+texture = ExtResource("23_w5d6t")
 region_enabled = true
 region_rect = Rect2(-256, 0, 512, 256)
 
@@ -613,13 +669,23 @@ shape = SubResource("RectangleShape2D_02k2j")
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(256, -5504)
-texture = ExtResource("4_fgnrj")
+texture = ExtResource("23_w5d6t")
 region_enabled = true
 region_rect = Rect2(256, 0, 512, 256)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Door" unique_id=1590870481]
 position = Vector2(256, -5504)
 shape = SubResource("RectangleShape2D_87bkq")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Door" unique_id=851570940]
+position = Vector2(255.99998, -5503.875)
+scale = Vector2(1.9999999, 255.75018)
+texture = SubResource("GradientTexture1D_5xwge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Door" unique_id=1723968282]
+position = Vector2(-511.00006, 0.125)
+scale = Vector2(1.9921873, 255.75018)
+texture = SubResource("GradientTexture1D_5xwge")
 
 [node name="Area2D" type="Area2D" parent="Door" unique_id=1173114290]
 

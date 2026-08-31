@@ -42,10 +42,6 @@ Circus by Dan Roseman
 Assets:
 Screaming Brain studios for textures
 
-Sounds:
-Utopia Asterisk provided by ccarp511
-book open by benji1
-
 Soundtrack by Kevin Mcloed"
 
 [node name="Label2" type="Label" parent="." unique_id=145989046]
@@ -56,7 +52,13 @@ offset_right = 1151.0
 offset_bottom = 647.0
 text = "Playtesters:
 Jet White
-Lachlan Leogreen"
+Lachlan Leogreen
+Arlo Kennedy
+
+
+Sounds:
+Utopia Asterisk provided by ccarp511
+book open by benji1"
 
 [node name="GoBack" type="Button" parent="." unique_id=2008040917]
 layout_mode = 0
