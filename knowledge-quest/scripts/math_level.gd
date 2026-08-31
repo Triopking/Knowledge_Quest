@@ -69,6 +69,7 @@ func _ready() -> void:
 	
 	if Global.shape_problem == true:
 		player.set_global_position(marker.global_position)
+		
 	
 	if Global.salrog_progress == 10:
 		get_tree().change_scene_to_file("res://end.tscn")
@@ -222,3 +223,7 @@ func _on_finish_exited(body: Node2D) -> void:
 	if body == player:
 		end = false
 		$KnowledgeCore/Label.visible = false
+		
+
+func reposition():
+	$Player/cameras/Camera2D2.set_global_position(player.global_position)
