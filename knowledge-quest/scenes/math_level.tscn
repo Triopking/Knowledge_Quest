@@ -464,10 +464,9 @@ radius = 59.53958
 script = ExtResource("1_j65sn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918853350]
-position = Vector2(-321.00006, -20028)
-scale = Vector2(973.7656, 705.43744)
+position = Vector2(-466.50073, -5413)
+scale = Vector2(354.2031, 319.34375)
 texture = SubResource("GradientTexture2D_j65sn")
-metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1667564813]
 texture_filter = 1
