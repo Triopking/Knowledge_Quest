@@ -576,6 +576,7 @@ position = Vector2(497, 423)
 zoom = Vector2(0.455, 0.455)
 position_smoothing_enabled = true
 position_smoothing_speed = 1.8
+drag_vertical_enabled = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1477038734]
 
