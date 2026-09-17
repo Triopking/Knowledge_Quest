@@ -4,6 +4,10 @@ extends Node2D
 @onready var arrow_2: Sprite2D = $Stones/Stone2/Arrow2
 @onready var arrow_3: Sprite2D = $Stones/Stone3/Arrow3
 
+var rock
+var rock_2
+var rock_3
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	arrow.visible = false
@@ -12,29 +16,39 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _process(_delta: float) -> void:
+	if rock == true and Input.is_action_just_pressed("click"):
+		print("Mingus")
+	elif rock_2 == true and Input.is_action_just_pressed("click"):
+		print("Bingus")
+	elif rock_3 == true and Input.is_action_just_pressed("click"):
+		print("Wingus")
 
 
 func _on_rock_1_mouse_entered() -> void:
 	arrow.visible = true
+	rock = true
 
 
 func _on_rock_1_mouse_exited() -> void:
 	arrow.visible = false
+	rock = false
 
 
 func _on_rock_2_mouse_entered() -> void:
 	arrow_2.visible = true
-
+	rock_2 = true
 
 func _on_rock_2_mouse_exited() -> void:
 	arrow_2.visible = false
+	rock_2 = false
 
 
 func _on_rock_3_mouse_entered() -> void:
 	arrow_3.visible = true
+	rock_3 = true
 
 
 func _on_rock_3_mouse_exited() -> void:
 	arrow_3.visible = false
+	rock_3 = false

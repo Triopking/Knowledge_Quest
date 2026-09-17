@@ -75,7 +75,7 @@ offset_left = -17.0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Mingus"
+text = "Bingus"
 
 [node name="Area2D2" type="Area2D" parent="Stones/Stone2" unique_id=126912037]
 position = Vector2(-419, 0)
@@ -101,7 +101,7 @@ offset_top = -1.0
 offset_right = 39.0
 offset_bottom = 22.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Mingus"
+text = "Wingus"
 
 [node name="Area2D3" type="Area2D" parent="Stones/Stone3" unique_id=1071939609]
 position = Vector2(-819, 1)

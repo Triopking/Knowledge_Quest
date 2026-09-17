@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfxyhdlfy0g5w"]
 
 [ext_resource type="Script" uid="uid://n6c6qr54djng" path="res://scripts/credits.gd" id="1_0bpdh"]
+[ext_resource type="Texture2D" uid="uid://blwte4fby5e5y" path="res://assets/Surreal.png" id="2_2ckv8"]
 
 [node name="Credits" type="Control" unique_id=509600254]
 layout_mode = 3
@@ -10,6 +11,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0bpdh")
+
+[node name="Surreal" type="TextureRect" parent="." unique_id=1249219392]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_2ckv8")
 
 [node name="Label" type="Label" parent="." unique_id=1129202532]
 layout_mode = 1
@@ -29,7 +47,7 @@ Creator of the game: Auguste who thinks the Leaning Tower of Pisa
 should be replicated everywhere.
 
 Tutorials & help:
-Bradely Cave - best teacher in Game Developement
+Bradley Cave - best teacher in Game Developement
 Jet White - a nice friend that was able to point me in the right 
 direction.
 Player movement: DevWorm & Single Minded
