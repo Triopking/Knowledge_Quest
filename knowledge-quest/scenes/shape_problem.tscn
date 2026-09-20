@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ddfmw7wo02ayn" path="res://assets/Cube.png" id="4_lonik"]
 [ext_resource type="Texture2D" uid="uid://icsglshkoicp" path="res://assets/Square.png" id="5_cr1mp"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="6_gnfao"]
-[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/questions.png" id="6_lonik"]
+[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/Questions.png" id="6_lonik"]
 [ext_resource type="Texture2D" uid="uid://dijhe46qmtk36" path="res://assets/Health.png" id="8_gykmk"]
 [ext_resource type="AudioStream" uid="uid://dn1ptwxdjlihg" path="res://sounds/utopia_asterisk.mp3" id="9_84vdc"]
 [ext_resource type="AudioStream" uid="uid://dlxa1q6odkrfr" path="res://sounds/Moo!.mp3" id="9_cr1mp"]
