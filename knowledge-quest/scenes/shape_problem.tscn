@@ -175,7 +175,6 @@ frame = 3
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1747068676]
 
 [node name="Correct" type="ColorRect" parent="CanvasLayer" unique_id=138682492]
-visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(3.5616756e-06, 0.6153194, 1.732707e-06, 1)
@@ -205,7 +204,6 @@ one_shot = true
 z_index = 2
 position = Vector2(577.99994, 550)
 scale = Vector2(2.84, 2.84)
-emitting = false
 amount = 122
 texture = SubResource("GradientTexture2D_gykmk")
 lifetime = 0.9

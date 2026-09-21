@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c5jjeurs1rbqd" path="res://assets/Stone.png" id="2_cf8a7"]
 [ext_resource type="Texture2D" uid="uid://b0h8nqxsu6q8c" path="res://assets/Arrow.png" id="3_b3gu8"]
 [ext_resource type="Texture2D" uid="uid://dijhe46qmtk36" path="res://assets/Health.png" id="4_eegl4"]
+[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/Questions.png" id="5_eegl4"]
+[ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="6_07qjy"]
 
 [sub_resource type="Gradient" id="Gradient_b3gu8"]
 offsets = PackedFloat32Array(0.11386139, 0.5247525, 1)
@@ -14,12 +16,17 @@ gradient = SubResource("Gradient_b3gu8")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
+[sub_resource type="Curve" id="Curve_eaj3q"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.29464287, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="Bridge_problem" type="Node2D" unique_id=1792554754]
 script = ExtResource("1_mm4w6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2047727634]
-position = Vector2(574, 323.5)
-scale = Vector2(18.09375, 10.109375)
+position = Vector2(576, 324)
+scale = Vector2(18, 10.125)
 texture = SubResource("GradientTexture2D_eegl4")
 
 [node name="Label" type="Label" parent="." unique_id=663465893]
@@ -35,8 +42,19 @@ offset_bottom = 197.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.59607846)
 theme_override_font_sizes/font_size = 40
 text = "Which stone do you choose?"
+
+[node name="Label2" type="Label" parent="." unique_id=303326601]
+offset_left = 300.0
+offset_top = 78.0
+offset_right = 854.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.68235296)
+theme_override_font_sizes/font_size = 40
+text = "What does "
 
 [node name="Stones" type="Node2D" parent="." unique_id=807053775]
 
@@ -118,9 +136,69 @@ texture = ExtResource("3_b3gu8")
 
 [node name="Health" type="Sprite2D" parent="." unique_id=377431656]
 texture_filter = 1
-position = Vector2(386, 237)
+position = Vector2(377, 290)
 texture = ExtResource("4_eegl4")
 vframes = 4
+
+[node name="Questions" type="Sprite2D" parent="." unique_id=280617198]
+texture_filter = 1
+position = Vector2(377, 227)
+texture = ExtResource("5_eegl4")
+vframes = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2109102703]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=138915375]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0.69143635, 3.85046e-07, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect" unique_id=933268845]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -236.5
+offset_top = -49.5
+offset_right = 236.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_07qjy")
+theme_override_font_sizes/font_size = 98
+text = "Correct"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/ColorRect" unique_id=1973817397]
+position = Vector2(577, 1)
+amount = 474
+lifetime = 4.3
+preprocess = 3.66
+speed_scale = 0.97
+explosiveness = 0.76
+randomness = 0.28
+lifetime_randomness = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(571.83, 1)
+direction = Vector2(0, 0.125)
+gravity = Vector2(0, 921.055)
+angular_velocity_min = -322.99
+angular_velocity_max = 720.0
+linear_accel_min = -5.61
+linear_accel_max = 1.87
+scale_amount_min = 3.2
+scale_amount_max = 11.55
+color = Color(1, 0, 0, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_eaj3q")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1051929046]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
 
 [connection signal="mouse_entered" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_entered"]
 [connection signal="mouse_exited" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_exited"]

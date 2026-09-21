@@ -3,10 +3,14 @@ extends Node2D
 @onready var arrow: Sprite2D = $Stones/Stone/Arrow
 @onready var arrow_2: Sprite2D = $Stones/Stone2/Arrow2
 @onready var arrow_3: Sprite2D = $Stones/Stone3/Arrow3
+@onready var label_2: Label = $Label2
 
 var rock
 var rock_2
 var rock_3
+var question
+var num
+var num_2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +21,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	num = randi()%12
+	num_2 = randi()%12
+	question = str(num + " x " + num_2)
+	label_2.text = "What does " + question + " equal to?"
+	
 	if rock == true and Input.is_action_just_pressed("click"):
 		print("Mingus")
 	elif rock_2 == true and Input.is_action_just_pressed("click"):

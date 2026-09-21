@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dq1no5e0wu70g"]
 
 [ext_resource type="Script" uid="uid://bhuvmekeulpfg" path="res://scripts/end.gd" id="1_n735c"]
+[ext_resource type="Texture2D" uid="uid://wh2qv6juu0hg" path="res://assets/Surreal3 - Copy.png" id="2_3d26k"]
 
 [node name="End" type="Control" unique_id=1036131075]
 layout_mode = 3
@@ -10,6 +11,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n735c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=147851631]
+layout_mode = 0
+offset_left = -209.0
+offset_top = -98.0
+offset_right = 1363.0
+offset_bottom = 747.0
+color = Color(0, 0, 0, 1)
+
+[node name="Surreal3Copy" type="TextureRect" parent="." unique_id=49958557]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_3d26k")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=123449558]
 layout_mode = 1
