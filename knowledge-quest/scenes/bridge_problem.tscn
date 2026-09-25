@@ -149,6 +149,7 @@ vframes = 4
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2109102703]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=138915375]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0, 0.69143635, 3.85046e-07, 1)

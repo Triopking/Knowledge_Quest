@@ -5,26 +5,52 @@ extends Node2D
 @onready var arrow_3: Sprite2D = $Stones/Stone3/Arrow3
 @onready var label_2: Label = $Label2
 
+#labels on the rocks
+@onready var rock_label: Label = $Stones/Stone/Label
+@onready var rock_label_2: Label = $Stones/Stone2/Label2
+@onready var rock_label_3: Label = $Stones/Stone3/Label3
+
+
 var rock
 var rock_2
 var rock_3
 var question
 var num
 var num_2
+var random
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	arrow.visible = false
 	arrow_2.visible = false
 	arrow_3.visible = false
+	
+	#sets question up
+	num = randi()%11 + 2
+	num_2 = randi()%11 + 2
+	question = str(num) + " x " + str(num_2)
+	label_2.text = "What does " + question + " equal to?"
+	
+	random = randi()%3
+	if random == 0:
+		rock_label.text = str(num*num_2)
+		rock_label_2.text = str(randi()%143+2)
+		rock_label_3.text = str(randi()%143+2)
+	elif random == 1:
+		rock_label_2.text = str(num*num_2)
+		rock_label.text = str(randi()%143+2)
+		rock_label_3.text = str(randi()%143+2)
+	elif random == 2:
+		rock_label_3.text = str(num*num_2)
+		rock_label_2.text = str(randi()%143+2)
+		rock_label.text = str(randi()%143+2)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	num = randi()%12
-	num_2 = randi()%12
-	question = str(num + " x " + num_2)
-	label_2.text = "What does " + question + " equal to?"
+	
+	
 	
 	if rock == true and Input.is_action_just_pressed("click"):
 		print("Mingus")

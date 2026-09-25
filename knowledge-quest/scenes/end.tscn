@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dq1no5e0wu70g"]
 
 [ext_resource type="Script" uid="uid://bhuvmekeulpfg" path="res://scripts/end.gd" id="1_n735c"]
-[ext_resource type="Texture2D" uid="uid://wh2qv6juu0hg" path="res://assets/Surreal3 - Copy.png" id="2_3d26k"]
+[ext_resource type="Texture2D" uid="uid://c3len4tms6f0y" path="res://assets/DinosaurLight(surreal4).png" id="2_3d26k"]
 
 [node name="End" type="Control" unique_id=1036131075]
 layout_mode = 3
@@ -21,6 +21,7 @@ offset_bottom = 747.0
 color = Color(0, 0, 0, 1)
 
 [node name="Surreal3Copy" type="TextureRect" parent="." unique_id=49958557]
+modulate = Color(0.50140655, 0.5014065, 0.5014065, 1)
 texture_filter = 1
 layout_mode = 0
 offset_right = 1152.0
