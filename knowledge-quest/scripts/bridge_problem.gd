@@ -19,6 +19,10 @@ var num
 var num_2
 var random
 
+var op1
+var op2
+var op3
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	arrow.visible = false
@@ -33,17 +37,26 @@ func _ready() -> void:
 	
 	random = randi()%3
 	if random == 0:
-		rock_label.text = str(num*num_2)
-		rock_label_2.text = str(randi()%143+2)
-		rock_label_3.text = str(randi()%143+2)
+		op1 = str(num*num_2)
+		rock_label.text = op1
+		op2 = str(randi()%143+2)
+		rock_label_2.text = op2
+		op3 = str(randi()%143+2)
+		rock_label_3.text = op3
 	elif random == 1:
-		rock_label_2.text = str(num*num_2)
-		rock_label.text = str(randi()%143+2)
-		rock_label_3.text = str(randi()%143+2)
+		op1 = str(num*num_2)
+		rock_label_2.text = op1
+		op2 = str(randi()%143+2)
+		rock_label.text = op2
+		op3 = str(randi()%143+2)
+		rock_label_3.text = op3
 	elif random == 2:
-		rock_label_3.text = str(num*num_2)
-		rock_label_2.text = str(randi()%143+2)
-		rock_label.text = str(randi()%143+2)
+		op1 = str(num*num_2)
+		rock_label_3.text = op1
+		op2 = str(randi()%143+2)
+		rock_label_2.text = op2
+		op3 = str(randi()%143+2)
+		rock_label.text = op3
 	
 
 
@@ -53,11 +66,17 @@ func _process(_delta: float) -> void:
 	
 	
 	if rock == true and Input.is_action_just_pressed("click"):
-		print("Mingus")
+		if num*num_2 == int(rock_label.text):
+			$CanvasLayer/ColorRect.show()
+			$CanvasLayer/ColorRect/CPUParticles2D.emitting = true
 	elif rock_2 == true and Input.is_action_just_pressed("click"):
-		print("Bingus")
+		if num*num_2 == int(rock_label_2.text):
+			$CanvasLayer/ColorRect.show()
+			$CanvasLayer/ColorRect/CPUParticles2D.emitting = true
 	elif rock_3 == true and Input.is_action_just_pressed("click"):
-		print("Wingus")
+		if num*num_2 == int(rock_label_3.text):
+			$CanvasLayer/ColorRect.show()
+			$CanvasLayer/ColorRect/CPUParticles2D.emitting = true
 
 
 func _on_rock_1_mouse_entered() -> void:
