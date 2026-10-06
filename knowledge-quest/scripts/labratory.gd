@@ -7,7 +7,6 @@ var on
 func _ready() -> void:
 	label.visible = false
 	on = false
-	Global.health = 4
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

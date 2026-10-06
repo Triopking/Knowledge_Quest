@@ -240,7 +240,8 @@ theme_override_font_sizes/font_size = 44
 text = "The right answer is "
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ColorRect2" unique_id=143955527]
-wait_time = 0.2
+wait_time = 2.0
+one_shot = true
 
 [connection signal="mouse_entered" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_entered"]
 [connection signal="mouse_exited" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_exited"]

@@ -52,9 +52,16 @@ func _ready() -> void:
 	
 
 func set_up():
-	
-	questions.frame = questions_left
-	health.frame = health_left
+	#sees if the player answered 3 questions correctly
+	if questions_left == 3:
+		good_ending()
+	else:
+		questions.frame = questions_left
+	#checks if the player has answered 3 questions incorrectly
+	if health_left == 0:
+		bad_ending()
+	else:
+		health.frame = health_left
 	
 	arrow.visible = false
 	arrow_2.visible = false
@@ -100,35 +107,37 @@ func _process(_delta: float) -> void:
 	if rock == true and Input.is_action_just_pressed("click"):
 		
 		if num*num_2 == int(rock_label.text):
-			print("rock 1")
+			
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
-		elif num*num_2 == int(rock_label.text):
+		elif not (num*num_2 == int(rock_label.text)):
 			color_rect_2.show()
 			correct_answer.text = "The right answer is " + str(num*num_2)
+	
 			timer_2.start()
 	elif rock_2 == true and Input.is_action_just_pressed("click"):
 		
 		if num*num_2 == int(rock_label_2.text):
-			print("rock 2")
+			
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
-		elif num*num_2 == int(rock_label_2.text):
+		elif not (num*num_2 == int(rock_label_2.text)):
 			color_rect_2.show()
 			correct_answer.text = "The right answer is " + str(num*num_2)
 			timer_2.start()
 	elif rock_3 == true and Input.is_action_just_pressed("click"):
 		
 		if num*num_2 == int(rock_label_3.text):
-			print("rock 3")
+			
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
-		elif num*num_2 == int(rock_label_3.text):
+		elif not (num*num_2 == int(rock_label_3.text)):
 			color_rect_2.show()
 			correct_answer.text = "The right answer is " + str(num*num_2)
+		
 			timer_2.start()
 
 
@@ -172,3 +181,14 @@ func _on_incorrect_timeout() -> void:
 	color_rect_2.hide()
 	health_left -= 1
 	set_up()
+
+func good_ending():
+	Global.cross_bridge = true
+	Global.red_key = false
+	get_tree().change_scene_to_file("res://scenes/math_level.tscn")
+	
+
+func bad_ending():
+	Global.salrog_progress += 2
+	get_tree().change_scene_to_file("res://scenes/math_level.tscn")
+	

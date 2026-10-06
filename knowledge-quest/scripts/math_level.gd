@@ -8,6 +8,7 @@ extends Node2D
 
 #goes to this location when comes back from teleportation
 @onready var marker: Marker2D = $question1/Marker2D
+@onready var marker_2: Marker2D = $BridgePuzzle/Marker2D
 
 #note inspection
 @onready var note_inspection: ColorRect = $Player/CanvasLayer/NoteInspection
@@ -34,6 +35,7 @@ var note_4
 
 var door
 var end
+var bridge
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -43,7 +45,8 @@ func _ready() -> void:
 	note_3_label.visible = false
 	note_4_label.visible = false
 	label.visible = false
-	$KnowledgeCore/Label.visible = false
+	$KnowledgeCore/Label.hide()
+	$BridgePuzzle/Label.hide()
 	
 	note_1 = false
 	note_2 = false
@@ -52,7 +55,7 @@ func _ready() -> void:
 	
 	
 	
-	note_inspection.visible = false
+	note_inspection.hide()
 	$Player/CanvasLayer/ProgressBar.value = Global.salrog_progress
 	$Door/Area2D/CollisionShape2D.disabled = false
 	
@@ -60,6 +63,9 @@ func _ready() -> void:
 		$Player/CanvasLayer/ProgressBar/RedKey.visible = true
 	elif Global.red_key == false:
 		$Player/CanvasLayer/ProgressBar/RedKey.visible = false
+	
+	if Global.cross_bridge == true:
+		player.set_global_position(marker_2.global_position)
 	
 	if Global.red_door == true:
 		$AnimationPlayer.play("open_sesame")
@@ -85,6 +91,10 @@ func _process(_delta: float) -> void:
 	if press == true and Input.is_action_just_pressed("interact"):
 		Global.shape_problem = true
 		get_tree().change_scene_to_file("res://scenes/shape_problem.tscn")
+	
+	elif bridge == true and Input.is_action_just_pressed("interact"):
+		get_tree().change_scene_to_file("res://scenes/bridge_problem.tscn")
+	
 	if note_1 == true and Input.is_action_just_pressed("interact"):
 		note_view = "To calculate the 
 					area of a 
@@ -124,7 +134,7 @@ func _process(_delta: float) -> void:
 		$Door/Area2D/CollisionShape2D.disabled = true
 	
 	if end == true and Input.is_action_just_pressed("interact"):
-		get_tree().change_scene_to_file("res://end.tscn")
+		get_tree().change_scene_to_file("res://scenes/end.tscn")
 
 
 func _question1_body_entered(body: Node2D) -> void:
@@ -227,3 +237,15 @@ func _on_finish_exited(body: Node2D) -> void:
 
 func reposition():
 	$Player/cameras/Camera2D2.set_global_position(player.global_position)
+
+
+func _on_bridge_puzzle_body_entered(body: Node2D) -> void:
+	if body == player:
+		bridge = true
+		$BridgePuzzle/Label.show()
+
+
+func _on_bridge_puzzle_body_exited(body: Node2D) -> void:
+	if body == player:
+		bridge = false
+		$BridgePuzzle/Label.hide()
