@@ -19,6 +19,7 @@ extends Node2D
 #incorrect answers
 @onready var color_rect_2: ColorRect = $CanvasLayer/ColorRect2
 @onready var timer_2: Timer = $CanvasLayer/ColorRect2/Timer
+@onready var correct_answer: Label = $CanvasLayer/ColorRect2/CorrectAnswer
 
 #these are for if the mouse is hovering over the rocks
 var rock
@@ -89,32 +90,46 @@ func set_up():
 		op3 = str(randi()%143+2)
 		rock_label.text = op3
 	
+	color_rect.hide()
+	color_rect_2.hide()
 	cpu_particles_2d.restart()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
 	if rock == true and Input.is_action_just_pressed("click"):
-		if num*num_2 == int(op1):
+		
+		if num*num_2 == int(rock_label.text):
+			print("rock 1")
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
-		elif num*num_2 == int(op1):
-			pass
+		elif num*num_2 == int(rock_label.text):
+			color_rect_2.show()
+			correct_answer.text = "The right answer is " + str(num*num_2)
+			timer_2.start()
 	elif rock_2 == true and Input.is_action_just_pressed("click"):
-		if num*num_2 == int(op2):
+		
+		if num*num_2 == int(rock_label_2.text):
+			print("rock 2")
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
-		elif num*num_2 == int(op2):
-			pass
+		elif num*num_2 == int(rock_label_2.text):
+			color_rect_2.show()
+			correct_answer.text = "The right answer is " + str(num*num_2)
+			timer_2.start()
 	elif rock_3 == true and Input.is_action_just_pressed("click"):
-		if num*num_2 == int(op3):
+		
+		if num*num_2 == int(rock_label_3.text):
+			print("rock 3")
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
-		elif num*num_2 == int(op3):
-			pass
+		elif num*num_2 == int(rock_label_3.text):
+			color_rect_2.show()
+			correct_answer.text = "The right answer is " + str(num*num_2)
+			timer_2.start()
 
 
 func _on_rock_1_mouse_entered() -> void:
@@ -150,4 +165,10 @@ func _on_correct_timeout() -> void:
 	color_rect.hide()
 	cpu_particles_2d.emitting = false
 	questions_left += 1
+	set_up()
+
+
+func _on_incorrect_timeout() -> void:
+	color_rect_2.hide()
+	health_left -= 1
 	set_up()

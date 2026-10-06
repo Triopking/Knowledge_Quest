@@ -197,16 +197,50 @@ hue_variation_max = 1.0
 hue_variation_curve = SubResource("Curve_eaj3q")
 
 [node name="Timer" type="Timer" parent="CanvasLayer/ColorRect" unique_id=97426900]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1051929046]
-visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
 
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect2" unique_id=1663374219]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.5
+offset_top = -49.5
+offset_right = 299.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_07qjy")
+theme_override_font_sizes/font_size = 98
+text = "Incorrect"
+
+[node name="CorrectAnswer" type="Label" parent="CanvasLayer/ColorRect2" unique_id=91251787]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = 67.0
+offset_right = 356.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_07qjy")
+theme_override_font_sizes/font_size = 44
+text = "The right answer is "
+
 [node name="Timer" type="Timer" parent="CanvasLayer/ColorRect2" unique_id=143955527]
+wait_time = 0.2
 
 [connection signal="mouse_entered" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_entered"]
 [connection signal="mouse_exited" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_exited"]
@@ -215,3 +249,4 @@ color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
 [connection signal="mouse_entered" from="Stones/Stone3/Area2D3" to="." method="_on_rock_3_mouse_entered"]
 [connection signal="mouse_exited" from="Stones/Stone3/Area2D3" to="." method="_on_rock_3_mouse_exited"]
 [connection signal="timeout" from="CanvasLayer/ColorRect/Timer" to="." method="_on_correct_timeout"]
+[connection signal="timeout" from="CanvasLayer/ColorRect2/Timer" to="." method="_on_incorrect_timeout"]
