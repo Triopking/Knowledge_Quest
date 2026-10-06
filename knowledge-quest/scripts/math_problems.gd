@@ -204,7 +204,7 @@ func _incorrect_timer() -> void:
 		answered = false
 
 func bad_end():
-	Global.red_key = false
+	
 	Global.salrog_progress += 2
 	get_tree().change_scene_to_file("res://scenes/math_level.tscn")
 func end():

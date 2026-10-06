@@ -10,21 +10,51 @@ extends Node2D
 @onready var rock_label_2: Label = $Stones/Stone2/Label2
 @onready var rock_label_3: Label = $Stones/Stone3/Label3
 
+#the feedback:
+#correct answers
+@onready var timer: Timer = $CanvasLayer/ColorRect/Timer
+@onready var cpu_particles_2d: CPUParticles2D = $CanvasLayer/ColorRect/CPUParticles2D
+@onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 
+#incorrect answers
+@onready var color_rect_2: ColorRect = $CanvasLayer/ColorRect2
+@onready var timer_2: Timer = $CanvasLayer/ColorRect2/Timer
+
+#these are for if the mouse is hovering over the rocks
 var rock
 var rock_2
 var rock_3
+
 var question
-var num
-var num_2
+var num #the first number in the question
+var num_2 #the second numner in te question
 var random
 
+#these are the options that are on the rocks
 var op1
 var op2
 var op3
 
+#the values for health and questions left:
+#health:
+@onready var health: Sprite2D = $Health
+var health_left = 3
+
+#questions:
+@onready var questions: Sprite2D = $Questions
+var questions_left = 0
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	set_up()
+	
+
+func set_up():
+	
+	questions.frame = questions_left
+	health.frame = health_left
+	
 	arrow.visible = false
 	arrow_2.visible = false
 	arrow_3.visible = false
@@ -35,22 +65,23 @@ func _ready() -> void:
 	question = str(num) + " x " + str(num_2)
 	label_2.text = "What does " + question + " equal to?"
 	
+	#this assigns the rock's answers, one is correct while the others are not
 	random = randi()%3
-	if random == 0:
+	if random == 0: #the rock on the right is the correct answer
 		op1 = str(num*num_2)
 		rock_label.text = op1
 		op2 = str(randi()%143+2)
 		rock_label_2.text = op2
 		op3 = str(randi()%143+2)
 		rock_label_3.text = op3
-	elif random == 1:
+	elif random == 1:#the rock on the middle is the correct answer
 		op1 = str(num*num_2)
 		rock_label_2.text = op1
 		op2 = str(randi()%143+2)
 		rock_label.text = op2
 		op3 = str(randi()%143+2)
 		rock_label_3.text = op3
-	elif random == 2:
+	elif random == 2:#the rock on the left is the correct answer
 		op1 = str(num*num_2)
 		rock_label_3.text = op1
 		op2 = str(randi()%143+2)
@@ -58,25 +89,32 @@ func _ready() -> void:
 		op3 = str(randi()%143+2)
 		rock_label.text = op3
 	
-
+	cpu_particles_2d.restart()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
-	
-	
 	if rock == true and Input.is_action_just_pressed("click"):
-		if num*num_2 == int(rock_label.text):
-			$CanvasLayer/ColorRect.show()
-			$CanvasLayer/ColorRect/CPUParticles2D.emitting = true
+		if num*num_2 == int(op1):
+			color_rect.show()
+			cpu_particles_2d.emitting = true
+			timer.start()
+		elif num*num_2 == int(op1):
+			pass
 	elif rock_2 == true and Input.is_action_just_pressed("click"):
-		if num*num_2 == int(rock_label_2.text):
-			$CanvasLayer/ColorRect.show()
-			$CanvasLayer/ColorRect/CPUParticles2D.emitting = true
+		if num*num_2 == int(op2):
+			color_rect.show()
+			cpu_particles_2d.emitting = true
+			timer.start()
+		elif num*num_2 == int(op2):
+			pass
 	elif rock_3 == true and Input.is_action_just_pressed("click"):
-		if num*num_2 == int(rock_label_3.text):
-			$CanvasLayer/ColorRect.show()
-			$CanvasLayer/ColorRect/CPUParticles2D.emitting = true
+		if num*num_2 == int(op3):
+			color_rect.show()
+			cpu_particles_2d.emitting = true
+			timer.start()
+		elif num*num_2 == int(op3):
+			pass
 
 
 func _on_rock_1_mouse_entered() -> void:
@@ -106,3 +144,10 @@ func _on_rock_3_mouse_entered() -> void:
 func _on_rock_3_mouse_exited() -> void:
 	arrow_3.visible = false
 	rock_3 = false
+
+
+func _on_correct_timeout() -> void:
+	color_rect.hide()
+	cpu_particles_2d.emitting = false
+	questions_left += 1
+	set_up()

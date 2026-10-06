@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c5jjeurs1rbqd" path="res://assets/Stone.png" id="2_cf8a7"]
 [ext_resource type="Texture2D" uid="uid://b0h8nqxsu6q8c" path="res://assets/Arrow.png" id="3_b3gu8"]
 [ext_resource type="Texture2D" uid="uid://dijhe46qmtk36" path="res://assets/Health.png" id="4_eegl4"]
-[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/Questions.png" id="5_eegl4"]
+[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/questions.png" id="5_eegl4"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="6_07qjy"]
 
 [sub_resource type="Gradient" id="Gradient_b3gu8"]
@@ -173,6 +173,7 @@ text = "Correct"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CanvasLayer/ColorRect" unique_id=1973817397]
 position = Vector2(577, 1)
+emitting = false
 amount = 474
 lifetime = 4.3
 preprocess = 3.66
@@ -195,11 +196,17 @@ hue_variation_min = -1.0
 hue_variation_max = 1.0
 hue_variation_curve = SubResource("Curve_eaj3q")
 
+[node name="Timer" type="Timer" parent="CanvasLayer/ColorRect" unique_id=97426900]
+wait_time = 2.0
+one_shot = true
+
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1051929046]
 visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
+
+[node name="Timer" type="Timer" parent="CanvasLayer/ColorRect2" unique_id=143955527]
 
 [connection signal="mouse_entered" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_entered"]
 [connection signal="mouse_exited" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_exited"]
@@ -207,3 +214,4 @@ color = Color(0.7943986, 3.2247603e-06, 9.62615e-07, 1)
 [connection signal="mouse_exited" from="Stones/Stone2/Area2D2" to="." method="_on_rock_2_mouse_exited"]
 [connection signal="mouse_entered" from="Stones/Stone3/Area2D3" to="." method="_on_rock_3_mouse_entered"]
 [connection signal="mouse_exited" from="Stones/Stone3/Area2D3" to="." method="_on_rock_3_mouse_exited"]
+[connection signal="timeout" from="CanvasLayer/ColorRect/Timer" to="." method="_on_correct_timeout"]
