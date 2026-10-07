@@ -824,6 +824,7 @@ metadata/_edit_group_ = true
 [node name="Label" type="Label" parent="BridgePuzzle" unique_id=1128666294]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 59
 text = "Press 'e'"
 
 [node name="Marker2D" type="Marker2D" parent="BridgePuzzle" unique_id=1846562342]

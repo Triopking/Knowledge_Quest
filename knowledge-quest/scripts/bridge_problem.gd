@@ -184,7 +184,7 @@ func _on_incorrect_timeout() -> void:
 
 func good_ending():
 	Global.cross_bridge = true
-	Global.red_key = false
+	Global.shape_problem = false
 	get_tree().change_scene_to_file("res://scenes/math_level.tscn")
 	
 
