@@ -210,7 +210,7 @@ func _on_note_4_body_exited(body: Node2D) -> void:
 #entrance on door
 func _on_door_body_entered(body: Node2D) -> void:
 	if body == player and Global.red_key == true:
-		$Door/Label.text = "You have the key to unlock this door!"
+		$Door/Label.text = "You have the key to unlock this door! Press e to open it!"
 		$Door/Label.visible = true
 		door = true
 	elif body == player and Global.red_key == false:

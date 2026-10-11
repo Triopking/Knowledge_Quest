@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7jhfaieut1i8" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://clhcsmrbua3wl" path="res://assets/City(surreal2).png" id="2_oa1go"]
 [ext_resource type="AudioStream" uid="uid://bclk31j20q0mn" path="res://sounds/Jaw harp.mp3" id="3_8ln24"]
 [ext_resource type="AudioStream" uid="uid://ernfgbiikljs" path="res://sounds/Jaw harp2.mp3" id="4_rtw2f"]
 [ext_resource type="AudioStream" uid="uid://ox1ort8t014k" path="res://sounds/Jaw harp3.mp3" id="5_oa1go"]
@@ -127,6 +128,37 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ekxnf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=443622794]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -611.5
+offset_top = -354.5
+offset_right = 611.5
+offset_bottom = 354.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1452311054]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -322.0
+offset_right = 575.0
+offset_bottom = 326.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oa1go")
+expand_mode = 1
 
 [node name="title" type="Node2D" parent="." unique_id=2084693267]
 position = Vector2(547.675, -82.98)

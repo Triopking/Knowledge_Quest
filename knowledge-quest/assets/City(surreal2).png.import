@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3len4tms6f0y"
-path="res://.godot/imported/DinosaurLight(surreal4).png-f62d395df8a8e2617a363df889f5e9bd.ctex"
+uid="uid://clhcsmrbua3wl"
+path="res://.godot/imported/City(surreal2).png-5d18c90a7ecafb09635df305a114f5a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/DinosaurLight(surreal4).png"
-dest_files=["res://.godot/imported/DinosaurLight(surreal4).png-f62d395df8a8e2617a363df889f5e9bd.ctex"]
+source_file="res://assets/City(surreal2).png"
+dest_files=["res://.godot/imported/City(surreal2).png-5d18c90a7ecafb09635df305a114f5a3.ctex"]
 
 [params]
 
