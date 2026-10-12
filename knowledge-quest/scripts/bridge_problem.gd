@@ -111,33 +111,36 @@ func _process(_delta: float) -> void:
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
+	
 		elif not (num*num_2 == int(rock_label.text)):
 			color_rect_2.show()
+			$CanvasLayer/ColorRect2/AudioStreamPlayer.play()
 			correct_answer.text = "The right answer is " + str(num*num_2)
-	
 			timer_2.start()
+	
 	elif rock_2 == true and Input.is_action_just_pressed("click"):
-		
 		if num*num_2 == int(rock_label_2.text):
-			
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
+	
 		elif not (num*num_2 == int(rock_label_2.text)):
 			color_rect_2.show()
+			$CanvasLayer/ColorRect2/AudioStreamPlayer.play()
 			correct_answer.text = "The right answer is " + str(num*num_2)
 			timer_2.start()
+	
 	elif rock_3 == true and Input.is_action_just_pressed("click"):
-		
 		if num*num_2 == int(rock_label_3.text):
 			
 			color_rect.show()
 			cpu_particles_2d.emitting = true
 			timer.start()
+	
 		elif not (num*num_2 == int(rock_label_3.text)):
 			color_rect_2.show()
+			$CanvasLayer/ColorRect2/AudioStreamPlayer.play()
 			correct_answer.text = "The right answer is " + str(num*num_2)
-		
 			timer_2.start()
 
 

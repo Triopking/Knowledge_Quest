@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://c5jjeurs1rbqd" path="res://assets/Stone.png" id="2_cf8a7"]
 [ext_resource type="Texture2D" uid="uid://b0h8nqxsu6q8c" path="res://assets/Arrow.png" id="3_b3gu8"]
 [ext_resource type="Texture2D" uid="uid://dijhe46qmtk36" path="res://assets/Health.png" id="4_eegl4"]
-[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/questions.png" id="5_eegl4"]
+[ext_resource type="Texture2D" uid="uid://cssbeur73dqid" path="res://assets/Questions.png" id="5_eegl4"]
 [ext_resource type="FontFile" uid="uid://cabc45ikapctp" path="res://Fonts/Circus.ttf" id="6_07qjy"]
+[ext_resource type="AudioStream" uid="uid://dlxa1q6odkrfr" path="res://sounds/Moo!.mp3" id="7_eaj3q"]
 
 [sub_resource type="Gradient" id="Gradient_b3gu8"]
 offsets = PackedFloat32Array(0.11386139, 0.5247525, 1)
@@ -242,6 +243,9 @@ text = "The right answer is "
 [node name="Timer" type="Timer" parent="CanvasLayer/ColorRect2" unique_id=143955527]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/ColorRect2" unique_id=205740872]
+stream = ExtResource("7_eaj3q")
 
 [connection signal="mouse_entered" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_entered"]
 [connection signal="mouse_exited" from="Stones/Stone/Area2D" to="." method="_on_rock_1_mouse_exited"]
