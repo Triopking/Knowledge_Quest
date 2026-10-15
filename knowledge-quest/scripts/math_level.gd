@@ -31,19 +31,35 @@ extends Node2D
 @onready var note_7_label: Label = $Notes/Note8/note7Label
 #note 8
 @onready var note_8_label: Label = $Notes/Note9/note7Label
+#note 9
+@onready var note_9_label: Label = $Notes/Note10/note9Label
+#note 10
+@onready var note_10_label: Label = $Notes/Note11/note10Label
+#note 11
+@onready var note_11_label: Label = $Notes/Note12/note11Label
+#note 12
+@onready var note_12_label: Label = $Notes/Note13/note12Label
+#note 13
+@onready var note_13_label: Label = $Notes/Note14/note13Label
 
 
 var press
 var note_view
 
-var note_1 = false
-var note_2 = false
-var note_3 = false
-var note_4 = false
-var note_5 = false
-var note_6 = false
-var note_7 = false
-var note_8 = false
+#these variables are for all of the notes detecting if the player is on the notes and to press e
+var note_1  = false
+var note_2  = false
+var note_3  = false
+var note_4  = false
+var note_5  = false
+var note_6  = false
+var note_7  = false
+var note_8  = false
+var note_9  = false
+var note_10 = false
+var note_11 = false
+var note_12 = false
+var note_13 = false
 
 var door
 var end
@@ -52,14 +68,20 @@ var bridge
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#sets everything up, mainly hides all the notes press 'e' message
-	note_1_label.visible = false
-	note_2_label.visible = false
-	note_3_label.visible = false
-	note_4_label.visible = false
-	note_5_label.visible = false
-	note_6_label.visible = false
-	note_7_label.visible = false
-	note_8_label.visible = false
+	note_1_label.visible  = false
+	note_2_label.visible  = false
+	note_3_label.visible  = false
+	note_4_label.visible  = false
+	note_5_label.visible  = false
+	note_6_label.visible  = false
+	note_7_label.visible  = false
+	note_8_label.visible  = false
+	note_9_label.visible  = false
+	note_10_label.visible = false
+	note_11_label.visible = false
+	note_12_label.visible = false
+	note_13_label.visible = false
+	
 	label.visible = false
 	$KnowledgeCore/Label.hide()
 	$BridgePuzzle/Label.hide()
@@ -178,13 +200,73 @@ func _process(_delta: float) -> void:
 		
 	elif note_8 == true and Input.is_action_just_pressed("interact"):
 		note_view = "Here are the 5 times tabels:
-		5 * 2 = 8       5 * 3 = 15
+		5 * 2 = 10       5 * 3 = 15
 		5 * 4 = 20      5 * 5 = 25
 		5 * 6 = 30      5 * 7 = 35
 		5 * 8 = 40      5 * 9 = 45
 		5 * 10 = 40
 		5 * 11 = 55
 		5 * 12 = 60"
+		note_label.text = note_view
+		closer_look()
+	
+	elif note_9 == true and Input.is_action_just_pressed("interact"):
+		note_view = "Here are the 5 times tabels:
+		6 * 2 = 12      6 * 3 = 18
+		6 * 4 = 24      6 * 5 = 30
+		6 * 6 = 36      6 * 7 = 42
+		6 * 8 = 48      6 * 9 = 54
+		6 * 10 = 60
+		6 * 11 = 66
+		6 * 12 = 72"
+		note_label.text = note_view
+		closer_look()
+	
+	elif note_10 == true and Input.is_action_just_pressed("interact"):
+		note_view = "Here are the 5 times tabels:
+		7 * 2 = 14      7 * 3 = 21
+		7 * 4 = 28      7 * 5 = 35
+		7 * 6 = 42      7 * 7 = 49
+		7 * 8 = 56      7 * 9 = 63
+		7 * 10 = 70
+		7 * 11 = 77
+		7 * 12 = 84"
+		note_label.text = note_view
+		closer_look()
+	
+	elif note_11 == true and Input.is_action_just_pressed("interact"):
+		note_view = "Here are the 5 times tabels:
+		8 * 2 = 16      8 * 3 = 24
+		8 * 4 = 32      8 * 5 = 40
+		8 * 6 = 48      8 * 7 = 56
+		8 * 8 = 64      8 * 9 = 72
+		8 * 10 = 80
+		8 * 11 = 88
+		8 * 12 = 96"
+		note_label.text = note_view
+		closer_look()
+	
+	elif note_12 == true and Input.is_action_just_pressed("interact"):
+		note_view = "Here are the 5 times tabels:
+		9 * 2 = 18      9 * 3 = 27
+		9 * 4 = 36      9 * 5 = 45
+		9 * 6 = 54      9 * 7 = 63
+		9 * 8 = 72      9 * 9 = 81
+		9 * 10 = 90
+		9 * 11 = 99
+		9 * 12 = 108"
+		note_label.text = note_view
+		closer_look()
+	
+	elif note_13 == true and Input.is_action_just_pressed("interact"):
+		note_view = "Here are the 5 times tabels:
+		10 * 2 = 20      10 * 3 = 27
+		10 * 4 = 40      10 * 5 = 45
+		10 * 6 = 60      10 * 7 = 63
+		10 * 8 = 80      10 * 9 = 81
+		10 * 10 = 100
+		10 * 11 = 110
+		10 * 12 = 120"
 		note_label.text = note_view
 		closer_look()
 	
@@ -335,7 +417,6 @@ func _on_note_6_exited(body: Node2D) -> void:
 		note_6_label.visible = false
 		note_6 = false
 
-
 func _on_note_7_entered(body: Node2D) -> void:
 	if body == player:
 		note_7_label.visible = true
@@ -346,7 +427,6 @@ func _on_note_7_exited(body: Node2D) -> void:
 	if body == player:
 		note_7_label.visible = false
 		note_7 = false
-
 
 func _on_note_8_entered(body: Node2D) -> void:
 	if body == player:
@@ -359,10 +439,61 @@ func _on_note_8_exited(body: Node2D) -> void:
 		note_8_label.visible = false
 		note_8 = false
 
-
 func _on_note_9_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body == player:
+		note_9_label.visible = true
+		note_9 = true
 
 
 func _on_note_9_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body == player:
+		note_9_label.visible = false
+		note_9 = false
+
+
+func _on_note_10_entered(body: Node2D) -> void:
+	if body == player:
+		note_10_label.visible = true
+		note_10 = true
+
+
+func _on_note_10_exited(body: Node2D) -> void:
+	if body == player:
+		note_10_label.visible = false
+		note_10 = false
+
+
+func _on_note_11_entered(body: Node2D) -> void:
+	if body == player:
+		note_11_label.visible = true
+		note_11 = true
+
+
+func _on_note_11_exited(body: Node2D) -> void:
+	if body == player:
+		note_11_label.visible = false
+		note_11 = false
+
+
+func _on_note_12_entered(body: Node2D) -> void:
+	if body == player:
+		note_12_label.visible = true
+		note_12 = true
+
+
+func _on_note_12_exited(body: Node2D) -> void:
+	if body == player:
+		note_12_label.visible = false
+		note_12 = false
+
+
+func _on_note_13_entered(body: Node2D) -> void:
+	if body == player:
+		note_13_label.visible = true
+		note_13 = true
+
+
+func _on_note_13_exited(body: Node2D) -> void:
+	if body == player:
+		note_13_label.visible = false
+		note_13 = false

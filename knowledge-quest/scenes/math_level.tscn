@@ -522,7 +522,7 @@ pick up"
 
 [node name="Note3" type="Sprite2D" parent="Notes" unique_id=1044301882]
 texture_filter = 1
-position = Vector2(982.0001, -3867)
+position = Vector2(1915.0001, -5177)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -603,6 +603,190 @@ position = Vector2(-1.8574219, -0.19824219)
 shape = SubResource("RectangleShape2D_jmegm")
 
 [node name="note5Label" type="Label" parent="Notes/Note6" unique_id=1423491673]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note7" type="Sprite2D" parent="Notes" unique_id=1107851295]
+texture_filter = 1
+position = Vector2(1276, -8478)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note7" unique_id=12816822]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note7/Area2D" unique_id=915537876]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note6Label" type="Label" parent="Notes/Note7" unique_id=499370268]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note8" type="Sprite2D" parent="Notes" unique_id=689485145]
+texture_filter = 1
+position = Vector2(684, -9598)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note8" unique_id=1779176247]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note8/Area2D" unique_id=1003584571]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note7Label" type="Label" parent="Notes/Note8" unique_id=1059630318]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note9" type="Sprite2D" parent="Notes" unique_id=1791272352]
+texture_filter = 1
+position = Vector2(4823, -9479)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note9" unique_id=155010761]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note9/Area2D" unique_id=172409139]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note8Label" type="Label" parent="Notes/Note9" unique_id=1763746933]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note10" type="Sprite2D" parent="Notes" unique_id=1310669972]
+texture_filter = 1
+position = Vector2(-3325.0002, -9789)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note10" unique_id=725538628]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note10/Area2D" unique_id=1387965831]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note9Label" type="Label" parent="Notes/Note10" unique_id=1453105265]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note11" type="Sprite2D" parent="Notes" unique_id=864030200]
+texture_filter = 1
+position = Vector2(-1138, -8699)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note11" unique_id=1489316603]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note11/Area2D" unique_id=958050960]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note10Label" type="Label" parent="Notes/Note11" unique_id=967374889]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note12" type="Sprite2D" parent="Notes" unique_id=2056999323]
+texture_filter = 1
+position = Vector2(-5752, -3198)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note12" unique_id=1426677105]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note12/Area2D" unique_id=1505695734]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note11Label" type="Label" parent="Notes/Note12" unique_id=1996432688]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note13" type="Sprite2D" parent="Notes" unique_id=970715676]
+texture_filter = 1
+position = Vector2(-5752, -3198)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note13" unique_id=1968843736]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note13/Area2D" unique_id=1281422530]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note12Label" type="Label" parent="Notes/Note13" unique_id=736762106]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note14" type="Sprite2D" parent="Notes" unique_id=2060555670]
+texture_filter = 1
+position = Vector2(1428, -3442)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note14" unique_id=1092041793]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note14/Area2D" unique_id=793151068]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note13Label" type="Label" parent="Notes/Note14" unique_id=273530404]
 offset_left = -366.53763
 offset_top = -959.0675
 offset_right = 704.4624
@@ -860,6 +1044,22 @@ blend_mode = 1
 [connection signal="body_exited" from="Notes/Note5/Area2D" to="." method="_on_note_4_body_exited"]
 [connection signal="body_entered" from="Notes/Note6/Area2D" to="." method="_on_note_5_entered"]
 [connection signal="body_exited" from="Notes/Note6/Area2D" to="." method="_on_note_5_exited"]
+[connection signal="body_entered" from="Notes/Note7/Area2D" to="." method="_on_note_6_entered"]
+[connection signal="body_exited" from="Notes/Note7/Area2D" to="." method="_on_note_6_exited"]
+[connection signal="body_entered" from="Notes/Note8/Area2D" to="." method="_on_note_7_entered"]
+[connection signal="body_exited" from="Notes/Note8/Area2D" to="." method="_on_note_7_exited"]
+[connection signal="body_entered" from="Notes/Note9/Area2D" to="." method="_on_note_8_entered"]
+[connection signal="body_exited" from="Notes/Note9/Area2D" to="." method="_on_note_8_exited"]
+[connection signal="body_entered" from="Notes/Note10/Area2D" to="." method="_on_note_9_entered"]
+[connection signal="body_exited" from="Notes/Note10/Area2D" to="." method="_on_note_9_exited"]
+[connection signal="body_entered" from="Notes/Note11/Area2D" to="." method="_on_note_10_entered"]
+[connection signal="body_exited" from="Notes/Note11/Area2D" to="." method="_on_note_10_exited"]
+[connection signal="body_entered" from="Notes/Note12/Area2D" to="." method="_on_note_11_entered"]
+[connection signal="body_exited" from="Notes/Note12/Area2D" to="." method="_on_note_11_exited"]
+[connection signal="body_entered" from="Notes/Note13/Area2D" to="." method="_on_note_12_entered"]
+[connection signal="body_exited" from="Notes/Note13/Area2D" to="." method="_on_note_12_exited"]
+[connection signal="body_entered" from="Notes/Note14/Area2D" to="." method="_on_note_13_entered"]
+[connection signal="body_exited" from="Notes/Note14/Area2D" to="." method="_on_note_13_exited"]
 [connection signal="pressed" from="Player/CanvasLayer/ProgressBar/escape button/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Player/CanvasLayer/NoteInspection/Button/Button" to="." method="_on_note_button_pressed"]
 [connection signal="body_entered" from="question1" to="." method="_question1_body_entered"]
