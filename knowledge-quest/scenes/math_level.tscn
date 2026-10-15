@@ -589,6 +589,29 @@ theme_override_font_sizes/font_size = 208
 text = "Press 'e' to 
 pick up"
 
+[node name="Note6" type="Sprite2D" parent="Notes" unique_id=1542370484]
+texture_filter = 1
+position = Vector2(-125.00006, -7067)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note6" unique_id=402300684]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note6/Area2D" unique_id=652401402]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note5Label" type="Label" parent="Notes/Note6" unique_id=1423491673]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
 [node name="Player" parent="." unique_id=876340452 instance=ExtResource("2_e45yn")]
 position = Vector2(497, 423)
 
@@ -659,11 +682,8 @@ offset_right = 744.0
 offset_bottom = 566.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
-text = "To calculate the 
-area of a 
-triangle, 
-It is equal:
-h * b * 1/2"
+text = "
+"
 
 [node name="Button" type="Node2D" parent="Player/CanvasLayer/NoteInspection" unique_id=1358299254]
 scale = Vector2(0.515, 0.515)
@@ -838,6 +858,8 @@ blend_mode = 1
 [connection signal="body_exited" from="Notes/Note4/Area2D" to="." method="_on_note_3_body_exited"]
 [connection signal="body_entered" from="Notes/Note5/Area2D" to="." method="_on_note_4_body_entered"]
 [connection signal="body_exited" from="Notes/Note5/Area2D" to="." method="_on_note_4_body_exited"]
+[connection signal="body_entered" from="Notes/Note6/Area2D" to="." method="_on_note_5_entered"]
+[connection signal="body_exited" from="Notes/Note6/Area2D" to="." method="_on_note_5_exited"]
 [connection signal="pressed" from="Player/CanvasLayer/ProgressBar/escape button/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Player/CanvasLayer/NoteInspection/Button/Button" to="." method="_on_note_button_pressed"]
 [connection signal="body_entered" from="question1" to="." method="_question1_body_entered"]
