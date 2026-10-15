@@ -23,27 +23,15 @@ extends Node2D
 @onready var note_3_label: Label = $Notes/Note4/note3Label
 # note 4
 @onready var note_4_label: Label = $Notes/Note5/note4Label
-# note 5
-@onready var note_5_label: Label = $Notes/Note6/note5Label
-#note 6
-@onready var note_6_label: Label = $Notes/Note7/note6Label
-#note 7
-@onready var note_7_label: Label = $Notes/Note8/note7Label
-#note 8
-@onready var note_8_label: Label = $Notes/Note9/note7Label
 
 
 var press
 var note_view
 
-var note_1 = false
-var note_2 = false
-var note_3 = false
-var note_4 = false
-var note_5 = false
-var note_6 = false
-var note_7 = false
-var note_8 = false
+var note_1
+var note_2
+var note_3
+var note_4
 
 var door
 var end
@@ -56,13 +44,14 @@ func _ready() -> void:
 	note_2_label.visible = false
 	note_3_label.visible = false
 	note_4_label.visible = false
-	note_5_label.visible = false
-	note_6_label.visible = false
-	note_7_label.visible = false
-	note_8_label.visible = false
 	label.visible = false
 	$KnowledgeCore/Label.hide()
 	$BridgePuzzle/Label.hide()
+	
+	note_1 = false
+	note_2 = false
+	note_3 = false
+	note_4 = false
 	
 	
 	
@@ -106,7 +95,6 @@ func _process(_delta: float) -> void:
 	elif bridge == true and Input.is_action_just_pressed("interact"):
 		get_tree().change_scene_to_file("res://scenes/bridge_problem.tscn")
 	
-	#first map notes
 	if note_1 == true and Input.is_action_just_pressed("interact"):
 		note_view = "To calculate the 
 					area of a 
@@ -137,54 +125,6 @@ func _process(_delta: float) -> void:
 					rectangle,
 					It is equal:
 					h * L"
-		note_label.text = note_view
-		closer_look()
-	#second map notes
-	if note_5 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 2 times tabels:
-		2 * 2 = 4       2 * 3 = 6
-		2 * 4 = 8       2 * 5 = 10
-		2 * 6 = 12      2 * 7 = 14
-		2 * 8 = 16      2 * 9 = 18
-		2 * 10 = 20
-		2 * 11 = 22
-		2 * 12 = 24"
-		note_label.text = note_view
-		closer_look()
-	
-	elif note_6 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 3 times tabels:
-		3 * 2 = 6       3 * 3 = 9
-		3 * 4 = 12      3 * 5 = 15
-		3 * 6 = 18      3 * 7 = 21
-		3 * 8 = 24      3 * 9 = 27
-		3 * 10 = 30
-		3 * 11 = 33
-		3 * 12 = 36"
-		note_label.text = note_view
-		closer_look()
-	
-	elif note_7 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 4 times tabels:
-		4 * 2 = 8       4 * 3 = 12
-		4 * 4 = 16      4 * 5 = 20
-		4 * 6 = 24      4 * 7 = 28
-		4 * 8 = 32      4 * 9 = 36
-		4 * 10 = 40
-		4 * 11 = 44
-		4 * 12 = 48"
-		note_label.text = note_view
-		closer_look()
-		
-	elif note_8 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 5 times tabels:
-		5 * 2 = 8       5 * 3 = 15
-		5 * 4 = 20      5 * 5 = 25
-		5 * 6 = 30      5 * 7 = 35
-		5 * 8 = 40      5 * 9 = 45
-		5 * 10 = 40
-		5 * 11 = 55
-		5 * 12 = 60"
 		note_label.text = note_view
 		closer_look()
 	
@@ -309,60 +249,3 @@ func _on_bridge_puzzle_body_exited(body: Node2D) -> void:
 	if body == player:
 		bridge = false
 		$BridgePuzzle/Label.hide()
-
-
-
-func _on_note_5_entered(body: Node2D) -> void:
-	if body == player:
-		note_5_label.visible = true
-		note_5 = true
-
-
-func _on_note_5_exited(body: Node2D) -> void:
-	if body == player:
-		note_5_label.visible = false
-		note_5 = false
-
-
-func _on_note_6_entered(body: Node2D) -> void:
-	if body == player:
-		note_6_label.visible = true
-		note_6 = true
-
-
-func _on_note_6_exited(body: Node2D) -> void:
-	if body == player:
-		note_6_label.visible = false
-		note_6 = false
-
-
-func _on_note_7_entered(body: Node2D) -> void:
-	if body == player:
-		note_7_label.visible = true
-		note_7 = true
-
-
-func _on_note_7_exited(body: Node2D) -> void:
-	if body == player:
-		note_7_label.visible = false
-		note_7 = false
-
-
-func _on_note_8_entered(body: Node2D) -> void:
-	if body == player:
-		note_8_label.visible = true
-		note_8 = true
-
-
-func _on_note_8_exited(body: Node2D) -> void:
-	if body == player:
-		note_8_label.visible = false
-		note_8 = false
-
-
-func _on_note_9_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_note_9_exited(body: Node2D) -> void:
-	pass # Replace with function body.
