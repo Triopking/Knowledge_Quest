@@ -30,7 +30,7 @@ extends Node2D
 #note 7
 @onready var note_7_label: Label = $Notes/Note8/note7Label
 #note 8
-@onready var note_8_label: Label = $Notes/Note9/note7Label
+@onready var note_8_label: Label = $Notes/Note9/note8Label
 #note 9
 @onready var note_9_label: Label = $Notes/Note10/note9Label
 #note 10
@@ -41,7 +41,10 @@ extends Node2D
 @onready var note_12_label: Label = $Notes/Note13/note12Label
 #note 13
 @onready var note_13_label: Label = $Notes/Note14/note13Label
-
+#note 14
+@onready var note_14_label: Label = $Notes/Note15/note14Label
+#note 15
+@onready var note_15_label: Label = $Notes/Note16/note15Label
 
 var press
 var note_view
@@ -60,6 +63,8 @@ var note_10 = false
 var note_11 = false
 var note_12 = false
 var note_13 = false
+var note_14 = false
+var note_15 = false
 
 var door
 var end
@@ -81,6 +86,8 @@ func _ready() -> void:
 	note_11_label.visible = false
 	note_12_label.visible = false
 	note_13_label.visible = false
+	note_14_label.visible = false
+	note_15_label.visible = false
 	
 	label.visible = false
 	$KnowledgeCore/Label.hide()
@@ -163,7 +170,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 	#second map notes
 	if note_5 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 2 times tabels:
+		note_view = "Here are the 2 
+		times tabels:
 		2 * 2 = 4       2 * 3 = 6
 		2 * 4 = 8       2 * 5 = 10
 		2 * 6 = 12      2 * 7 = 14
@@ -175,7 +183,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 	
 	elif note_6 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 3 times tabels:
+		note_view = "Here are the 3 
+		times tabels:
 		3 * 2 = 6       3 * 3 = 9
 		3 * 4 = 12      3 * 5 = 15
 		3 * 6 = 18      3 * 7 = 21
@@ -187,7 +196,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 	
 	elif note_7 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 4 times tabels:
+		note_view = "Here are the 4 
+		times tabels:
 		4 * 2 = 8       4 * 3 = 12
 		4 * 4 = 16      4 * 5 = 20
 		4 * 6 = 24      4 * 7 = 28
@@ -199,7 +209,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 		
 	elif note_8 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 5 times tabels:
+		note_view = "Here are the 5 
+		times tabels:
 		5 * 2 = 10       5 * 3 = 15
 		5 * 4 = 20      5 * 5 = 25
 		5 * 6 = 30      5 * 7 = 35
@@ -211,7 +222,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 	
 	elif note_9 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 5 times tabels:
+		note_view = "Here are the 6 
+		times tabels:
 		6 * 2 = 12      6 * 3 = 18
 		6 * 4 = 24      6 * 5 = 30
 		6 * 6 = 36      6 * 7 = 42
@@ -223,7 +235,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 	
 	elif note_10 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 5 times tabels:
+		note_view = "Here are the 7 
+		times tabels:
 		7 * 2 = 14      7 * 3 = 21
 		7 * 4 = 28      7 * 5 = 35
 		7 * 6 = 42      7 * 7 = 49
@@ -235,7 +248,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 	
 	elif note_11 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 5 times tabels:
+		note_view = "Here are the 8 
+		times tabels:
 		8 * 2 = 16      8 * 3 = 24
 		8 * 4 = 32      8 * 5 = 40
 		8 * 6 = 48      8 * 7 = 56
@@ -247,7 +261,8 @@ func _process(_delta: float) -> void:
 		closer_look()
 	
 	elif note_12 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 5 times tabels:
+		note_view = "Here are the 9 
+		times tabels:
 		9 * 2 = 18      9 * 3 = 27
 		9 * 4 = 36      9 * 5 = 45
 		9 * 6 = 54      9 * 7 = 63
@@ -259,14 +274,41 @@ func _process(_delta: float) -> void:
 		closer_look()
 	
 	elif note_13 == true and Input.is_action_just_pressed("interact"):
-		note_view = "Here are the 5 times tabels:
-		10 * 2 = 20      10 * 3 = 27
-		10 * 4 = 40      10 * 5 = 45
-		10 * 6 = 60      10 * 7 = 63
-		10 * 8 = 80      10 * 9 = 81
+		note_view = "Here are the 10 
+		times tabels:
+		10 * 2 = 20      10 * 3 = 30
+		10 * 4 = 40      10 * 5 = 50
+		10 * 6 = 60      10 * 7 = 70
+		10 * 8 = 80      10 * 9 = 90
 		10 * 10 = 100
 		10 * 11 = 110
 		10 * 12 = 120"
+		note_label.text = note_view
+		closer_look()
+	
+	elif note_14 == true and Input.is_action_just_pressed("interact"):
+		note_view = "Here are the 11
+		times tabels:
+		11 * 2 = 22      11 * 3 = 33
+		11 * 4 = 44      11 * 5 = 55
+		11 * 6 = 66      11 * 7 = 77
+		11 * 8 = 88      11 * 9 = 99
+		11 * 10 = 110
+		11 * 11 = 121
+		11 * 12 = 132"
+		note_label.text = note_view
+		closer_look()
+	
+	elif note_15 == true and Input.is_action_just_pressed("interact"):
+		note_view = "Here are the 12 
+		times tabels:
+		12 * 2 = 24      12 * 3 = 36
+		12 * 4 = 48      12 * 5 = 60
+		12 * 6 = 72      12 * 7 = 84
+		12 * 8 = 96      12 * 9 = 108
+		12 * 10 = 110
+		12 * 11 = 132
+		12 * 12 = 144"
 		note_label.text = note_view
 		closer_look()
 	
@@ -497,3 +539,27 @@ func _on_note_13_exited(body: Node2D) -> void:
 	if body == player:
 		note_13_label.visible = false
 		note_13 = false
+
+
+func _on_note_14_entered(body: Node2D) -> void:
+	if body == player:
+		note_14_label.visible = true
+		note_14 = true
+
+
+func _on_note_14_exited(body: Node2D) -> void:
+	if body == player:
+		note_14_label.visible = false
+		note_14 = false
+
+
+func _on_note_15_entered(body: Node2D) -> void:
+	if body == player:
+		note_15_label.visible = true
+		note_15 = true
+
+
+func _on_note_15_exited(body: Node2D) -> void:
+	if body == player:
+		note_15_label.visible = false
+		note_15 = false

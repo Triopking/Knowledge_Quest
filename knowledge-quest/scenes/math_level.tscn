@@ -522,7 +522,7 @@ pick up"
 
 [node name="Note3" type="Sprite2D" parent="Notes" unique_id=1044301882]
 texture_filter = 1
-position = Vector2(1915.0001, -5177)
+position = Vector2(-158.99988, -5233)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -591,7 +591,7 @@ pick up"
 
 [node name="Note6" type="Sprite2D" parent="Notes" unique_id=1542370484]
 texture_filter = 1
-position = Vector2(-125.00006, -7067)
+position = Vector2(1375.0001, 660)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -614,7 +614,7 @@ pick up"
 
 [node name="Note7" type="Sprite2D" parent="Notes" unique_id=1107851295]
 texture_filter = 1
-position = Vector2(1276, -8478)
+position = Vector2(1200, -9211)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -660,7 +660,7 @@ pick up"
 
 [node name="Note9" type="Sprite2D" parent="Notes" unique_id=1791272352]
 texture_filter = 1
-position = Vector2(4823, -9479)
+position = Vector2(4534, -9533)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -683,7 +683,7 @@ pick up"
 
 [node name="Note10" type="Sprite2D" parent="Notes" unique_id=1310669972]
 texture_filter = 1
-position = Vector2(-3325.0002, -9789)
+position = Vector2(-2035, -9817)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -706,7 +706,7 @@ pick up"
 
 [node name="Note11" type="Sprite2D" parent="Notes" unique_id=864030200]
 texture_filter = 1
-position = Vector2(-1138, -8699)
+position = Vector2(2881, -8244)
 scale = Vector2(0.16778588, 0.16778585)
 texture = ExtResource("9_5d4p0")
 metadata/_edit_group_ = true
@@ -787,6 +787,52 @@ position = Vector2(-1.8574219, -0.19824219)
 shape = SubResource("RectangleShape2D_jmegm")
 
 [node name="note13Label" type="Label" parent="Notes/Note14" unique_id=273530404]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note15" type="Sprite2D" parent="Notes" unique_id=288545411]
+texture_filter = 1
+position = Vector2(-43, -7241)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note15" unique_id=1271084242]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note15/Area2D" unique_id=922444563]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note14Label" type="Label" parent="Notes/Note15" unique_id=73480774]
+offset_left = -366.53763
+offset_top = -959.0675
+offset_right = 704.4624
+offset_bottom = -418.0675
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 208
+text = "Press 'e' to 
+pick up"
+
+[node name="Note16" type="Sprite2D" parent="Notes" unique_id=1532804564]
+texture_filter = 1
+position = Vector2(-632, -8644)
+scale = Vector2(0.16778588, 0.16778585)
+texture = ExtResource("9_5d4p0")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="Notes/Note16" unique_id=923199755]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Notes/Note16/Area2D" unique_id=1768139635]
+position = Vector2(-1.8574219, -0.19824219)
+shape = SubResource("RectangleShape2D_jmegm")
+
+[node name="note15Label" type="Label" parent="Notes/Note16" unique_id=90026041]
 offset_left = -366.53763
 offset_top = -959.0675
 offset_right = 704.4624
@@ -1060,6 +1106,10 @@ blend_mode = 1
 [connection signal="body_exited" from="Notes/Note13/Area2D" to="." method="_on_note_12_exited"]
 [connection signal="body_entered" from="Notes/Note14/Area2D" to="." method="_on_note_13_entered"]
 [connection signal="body_exited" from="Notes/Note14/Area2D" to="." method="_on_note_13_exited"]
+[connection signal="body_entered" from="Notes/Note15/Area2D" to="." method="_on_note_14_entered"]
+[connection signal="body_exited" from="Notes/Note15/Area2D" to="." method="_on_note_14_exited"]
+[connection signal="body_entered" from="Notes/Note16/Area2D" to="." method="_on_note_15_entered"]
+[connection signal="body_exited" from="Notes/Note16/Area2D" to="." method="_on_note_15_exited"]
 [connection signal="pressed" from="Player/CanvasLayer/ProgressBar/escape button/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Player/CanvasLayer/NoteInspection/Button/Button" to="." method="_on_note_button_pressed"]
 [connection signal="body_entered" from="question1" to="." method="_question1_body_entered"]
